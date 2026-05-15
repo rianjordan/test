@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: "The final, world-shaking battle reaches its definitive conclusion. A world without walls awaits in the epic finale to Hajime Isayama's masterpiece.",
             status: "COMPLETED",
             genres: ["Action", "Drama", "Mystery"],
-            img: "./assets/imagine/page-home/attack_on_titan.jpg"
+            img: "./assets/img/manga/attack_on_titan.jpg"
         },
         {
             title: "SOLO LEVELING",
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: "The final battle against the Monarchs.<br><br>Sung Jinwoo faces his greatest challenge yet in this epic conclusion.",
             status: "COMPLETED",
             genres: ["Action", "Fantasy", "System"],
-            img: "./assets/imagine/page-home/solo_leveling.jpg"
+            img: "./assets/img/manga/solo_leveling.jpg"
         },
         {
             title: "CHAINSAW MAN",
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: "Denji's chaotic life continues as new devils appear in the city. High-octane action and dark comedy awaits.",
             status: "ONGOING",
             genres: ["Action", "Supernatural", "Gore"],
-            img: "./assets/imagine/page-home/chainsaw_man.jpg"
+            img: "./assets/img/manga/chainsaw_man.jpg"
         }
     ];
 
@@ -207,31 +207,31 @@ document.addEventListener('DOMContentLoaded', () => {
     // ─── 5. MANGA GRID GENERATION ───
 
     const gridData = [
-        { title: "Attack on Titan",  ch: "Ch. 139",     rating: 5.0, views: "25.5k", isNew: false, img: "./assets/imagine/page-home/attack_on_titan.jpg" },
-        { title: "Solo Leveling",   ch: "Ch. 179",     rating: 4.9, views: "18.2k", isNew: false, img: "./assets/imagine/page-home/solo_leveling.jpg" },
-        { title: "Chainsaw Man",    ch: "Ch. 131",     rating: 4.8, views: "13.1k", isNew: true,  img: "./assets/imagine/page-home/chainsaw_man.jpg" },
-        { title: "One Piece",       ch: "Ch. 1084",    rating: 4.5, views: "15.5k", isNew: true,  img: "./assets/imagine/page-home/manga_cover_action.png" },
-        { title: "Jujutsu Kaisen",  ch: "Ch. 221",     rating: 4.9, views: "12.2k", isNew: false, img: "./assets/imagine/page-home/manga_cover_fantasy.png" },
-        { title: "Demon Slayer",    ch: "Ch. 205",     rating: 5.0, views: "22.0k", isNew: false, img: "./assets/imagine/page-home/manga_cover_action.png" },
-        { title: "Blue Lock",        ch: "Ch. 215",  rating: 4.7, views: "9.2k",  isNew: true,  img: "./assets/imagine/page-home/manga_cover_action.png" },
-        { title: "Oshi No Ko",       ch: "Ch. 118",  rating: 4.9, views: "14.5k", isNew: true,  img: "./assets/imagine/page-home/manga_cover_fantasy.png" },
-        { title: "Spy x Family",     ch: "Ch. 81",   rating: 4.8, views: "20.1k", isNew: false, img: "./assets/imagine/page-home/manga_cover_action.png" },
-        { title: "Black Clover",     ch: "Ch. 358",  rating: 4.1, views: "7.8k",  isNew: false, img: "./assets/imagine/page-home/manga_cover_fantasy.png" },
-        { title: "Naruto",           ch: "Ch. 700",  rating: 4.6, views: "50.1k", isNew: false, img: "./assets/imagine/page-home/manga_cover_action.png" },
-        { title: "Dragon Ball",      ch: "Ch. 519",  rating: 4.7, views: "45.5k", isNew: false, img: "./assets/imagine/page-home/manga_cover_fantasy.png" },
-        { title: "Tokyo Ghoul",      ch: "Ch. 143",  rating: 4.8, views: "12.2k", isNew: false, img: "./assets/imagine/page-home/manga_cover_action.png" },
-        { title: "Death Note",       ch: "Ch. 108",  rating: 4.9, views: "30.5k", isNew: false, img: "./assets/imagine/page-home/manga_cover_fantasy.png" },
-        { title: "Haikyuu!!",        ch: "Ch. 402",  rating: 4.8, views: "11.5k", isNew: false, img: "./assets/imagine/page-home/manga_cover_action.png" },
-        { title: "Boruto",           ch: "Ch. 80",   rating: 3.5, views: "6.2k",  isNew: true,  img: "./assets/imagine/page-home/manga_cover_fantasy.png" },
-        { title: "Black Butler",     ch: "Ch. 196",  rating: 4.4, views: "4.2k",  isNew: true,  img: "./assets/imagine/page-home/manga_cover_action.png" },
-        { title: "Vinland Saga",     ch: "Ch. 202",  rating: 4.9, views: "8.5k",  isNew: false, img: "./assets/imagine/page-home/manga_cover_fantasy.png" },
-        { title: "Vagabond",         ch: "Ch. 327",  rating: 5.0, views: "7.1k",  isNew: false, img: "./assets/imagine/page-home/manga_cover_action.png" },
-        { title: "Berserk",          ch: "Ch. 373",  rating: 5.0, views: "25.2k", isNew: true,  img: "./assets/imagine/page-home/manga_cover_fantasy.png" },
-        { title: "One Punch Man",    ch: "Ch. 184",  rating: 4.8, views: "22.5k", isNew: true,  img: "./assets/imagine/page-home/manga_cover_action.png" },
-        { title: "Slam Dunk",        ch: "Ch. 276",  rating: 4.9, views: "10.1k", isNew: false, img: "./assets/imagine/page-home/manga_cover_fantasy.png" },
-        { title: "Monster",          ch: "Ch. 162",  rating: 4.9, views: "5.5k",  isNew: false, img: "./assets/imagine/page-home/manga_cover_action.png" },
-        { title: "Kingdom",          ch: "Ch. 758",  rating: 4.9, views: "9.2k",  isNew: true,  img: "./assets/imagine/page-home/manga_cover_fantasy.png" },
-        { title: "Hunter x Hunter",  ch: "Ch. 400",  rating: 4.9, views: "18.8k", isNew: false, img: "./assets/imagine/page-home/manga_cover_action.png" }
+        { title: "Attack on Titan", ch: "Ch. 139", rating: 5.0, views: "25.5k", isNew: false, img: "./assets/img/manga/attack_on_titan.jpg" },
+        { title: "Solo Leveling", ch: "Ch. 179", rating: 4.9, views: "18.2k", isNew: false, img: "./assets/img/manga/solo_leveling.jpg" },
+        { title: "Chainsaw Man", ch: "Ch. 131", rating: 4.8, views: "13.1k", isNew: true, img: "./assets/img/manga/chainsaw_man.jpg" },
+        { title: "One Piece", ch: "Ch. 1084", rating: 4.5, views: "15.5k", isNew: true, img: "./assets/img/manga/manga_cover_action.png" },
+        { title: "Jujutsu Kaisen", ch: "Ch. 221", rating: 4.9, views: "12.2k", isNew: false, img: "./assets/img/manga/manga_cover_fantasy.png" },
+        { title: "Demon Slayer", ch: "Ch. 205", rating: 5.0, views: "22.0k", isNew: false, img: "./assets/img/manga/manga_cover_action.png" },
+        { title: "Blue Lock", ch: "Ch. 215", rating: 4.7, views: "9.2k", isNew: true, img: "./assets/img/manga/manga_cover_action.png" },
+        { title: "Oshi No Ko", ch: "Ch. 118", rating: 4.9, views: "14.5k", isNew: true, img: "./assets/img/manga/manga_cover_fantasy.png" },
+        { title: "Spy x Family", ch: "Ch. 81", rating: 4.8, views: "20.1k", isNew: false, img: "./assets/img/manga/manga_cover_action.png" },
+        { title: "Black Clover", ch: "Ch. 358", rating: 4.1, views: "7.8k", isNew: false, img: "./assets/img/manga/manga_cover_fantasy.png" },
+        { title: "Naruto", ch: "Ch. 700", rating: 4.6, views: "50.1k", isNew: false, img: "./assets/img/manga/manga_cover_action.png" },
+        { title: "Dragon Ball", ch: "Ch. 519", rating: 4.7, views: "45.5k", isNew: false, img: "./assets/img/manga/manga_cover_fantasy.png" },
+        { title: "Tokyo Ghoul", ch: "Ch. 143", rating: 4.8, views: "12.2k", isNew: false, img: "./assets/img/manga/manga_cover_action.png" },
+        { title: "Death Note", ch: "Ch. 108", rating: 4.9, views: "30.5k", isNew: false, img: "./assets/img/manga/manga_cover_fantasy.png" },
+        { title: "Haikyuu!!", ch: "Ch. 402", rating: 4.8, views: "11.5k", isNew: false, img: "./assets/img/manga/manga_cover_action.png" },
+        { title: "Boruto", ch: "Ch. 80", rating: 3.5, views: "6.2k", isNew: true, img: "./assets/img/manga/manga_cover_fantasy.png" },
+        { title: "Black Butler", ch: "Ch. 196", rating: 4.4, views: "4.2k", isNew: true, img: "./assets/img/manga/manga_cover_action.png" },
+        { title: "Vinland Saga", ch: "Ch. 202", rating: 4.9, views: "8.5k", isNew: false, img: "./assets/img/manga/manga_cover_fantasy.png" },
+        { title: "Vagabond", ch: "Ch. 327", rating: 5.0, views: "7.1k", isNew: false, img: "./assets/img/manga/manga_cover_action.png" },
+        { title: "Berserk", ch: "Ch. 373", rating: 5.0, views: "25.2k", isNew: true, img: "./assets/img/manga/manga_cover_fantasy.png" },
+        { title: "One Punch Man", ch: "Ch. 184", rating: 4.8, views: "22.5k", isNew: true, img: "./assets/img/manga/manga_cover_action.png" },
+        { title: "Slam Dunk", ch: "Ch. 276", rating: 4.9, views: "10.1k", isNew: false, img: "./assets/img/manga/manga_cover_fantasy.png" },
+        { title: "Monster", ch: "Ch. 162", rating: 4.9, views: "5.5k", isNew: false, img: "./assets/img/manga/manga_cover_action.png" },
+        { title: "Kingdom", ch: "Ch. 758", rating: 4.9, views: "9.2k", isNew: true, img: "./assets/img/manga/manga_cover_fantasy.png" },
+        { title: "Hunter x Hunter", ch: "Ch. 400", rating: 4.9, views: "18.8k", isNew: false, img: "./assets/img/manga/manga_cover_action.png" }
     ];
 
     const gridContainer = document.getElementById('manga-grid');
@@ -239,9 +239,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function generateStars(rating) {
         let html = '';
         for (let i = 1; i <= 5; i++) {
-            if (rating >= i)        html += '<i class="fa-solid fa-star"></i>';
+            if (rating >= i) html += '<i class="fa-solid fa-star"></i>';
             else if (rating >= i - 0.5) html += '<i class="fa-solid fa-star-half-stroke"></i>';
-            else                    html += '<i class="fa-regular fa-star"></i>';
+            else html += '<i class="fa-regular fa-star"></i>';
         }
         return html;
     }
@@ -377,7 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', () => {
         const scrolled = window.scrollY > 60;
-        
+
         // Header polish on scroll
         if (header) {
             if (scrolled) {
@@ -431,20 +431,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // --- 4.5 CAROUSEL AUTO-PLAY ---
-    let autoPlayInterval = setInterval(() => {
-        currentSlide = currentSlide < carouselData.length - 1 ? currentSlide + 1 : 0;
-        updateSlideUI();
-    }, 5000);
+// --- 4.5 CAROUSEL AUTO-PLAY ---
+let autoPlayInterval = setInterval(() => {
+    currentSlide = currentSlide < carouselData.length - 1 ? currentSlide + 1 : 0;
+    updateSlideUI();
+}, 5000);
 
-    // Pause auto-play on interaction
-    const carouselContainer = document.querySelector('.carousel-inner')?.parentElement;
-    if (carouselContainer) {
-        carouselContainer.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
-        carouselContainer.addEventListener('mouseleave', () => {
-            autoPlayInterval = setInterval(() => {
-                currentSlide = currentSlide < carouselData.length - 1 ? currentSlide + 1 : 0;
-                updateSlideUI();
-            }, 5000);
-        });
-    }
+// Pause auto-play on interaction
+const carouselContainer = document.querySelector('.carousel-inner')?.parentElement;
+if (carouselContainer) {
+    carouselContainer.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+    carouselContainer.addEventListener('mouseleave', () => {
+        autoPlayInterval = setInterval(() => {
+            currentSlide = currentSlide < carouselData.length - 1 ? currentSlide + 1 : 0;
+            updateSlideUI();
+        }, 5000);
+    });
+}
