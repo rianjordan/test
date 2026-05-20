@@ -1,0 +1,147 @@
+/* ═══════════════════════════════════════════════════════════
+   Reader's Haven — Manga Data Store
+   manga-data.js
+   ═══════════════════════════════════════════════════════════ */
+
+window.MangaData = {
+  "carouselData": [
+    {
+      "title": "THE EMINENCE IN SHADOW",
+      "chapter": "Chapter 1",
+      "desc": "Cid's dream is to become a mastermind who pulls strings in the shadows. Reincarnated into a fantasy world, he creates an imaginary organization to fight a cult... only for that cult to actually exist!",
+      "status": "ONGOING",
+      "genres": ["Action", "Comedy", "Fantasy", "Isekai"],
+      "img": "./manga-art/Kage no Jitsuryokusha ni Naritakute!.jpg",
+      "chapters": [
+        { 
+          "id": "eis-1", 
+          "title": "Chapter 1: The Eminence in Shadow!", 
+          "pages": 0, 
+          "source": "./manga-source/Kage no Jitsuryokusha ni Naritakute! - Ch. 1.pdf",
+          "type": "pdf"
+        }
+      ]
+    },
+    {
+      "title": "ATTACK ON TITAN",
+      "chapter": "Chapter 139: Toward the Tree on That Hill",
+      "desc": "The final, world-shaking battle reaches its definitive conclusion. A world without walls awaits in the epic finale to Hajime Isayama's masterpiece.",
+      "status": "COMPLETED",
+      "genres": ["Action", "Drama", "Mystery"],
+      "img": "./manga-art/attack_on_titan.jpg",
+      "chapters": [
+        { "id": "aot-139", "title": "Chapter 139: Toward the Tree on That Hill", "pages": 20 },
+        { "id": "aot-138", "title": "Chapter 138: A Long Dream", "pages": 18 },
+        { "id": "aot-137", "title": "Chapter 137: Titans", "pages": 16 },
+        { "id": "aot-1", "title": "Chapter 1: To You, 2000 Years From Now", "pages": 25 }
+      ]
+    },
+    {
+      "title": "SOLO LEVELING",
+      "chapter": "Chapter 179 (COMPLETED)",
+      "desc": "The final battle against the Monarchs.<br><br>Sung Jinwoo faces his greatest challenge yet in this epic conclusion.",
+      "status": "COMPLETED",
+      "genres": ["Action", "Fantasy", "System"],
+      "img": "./manga-art/solo_leveling.jpg",
+      "chapters": [
+        { "id": "sl-179", "title": "Chapter 179: Epilogue finale", "pages": 15 },
+        { "id": "sl-178", "title": "Chapter 178: The Monarch of Shadows", "pages": 12 },
+        { "id": "sl-1", "title": "Chapter 1: The Courage of the Weakest", "pages": 18 }
+      ]
+    },
+    {
+      "title": "CHAINSAW MAN",
+      "chapter": "Chapter 131",
+      "desc": "Denji's chaotic life continues as new devils appear in the city. High-octane action and dark comedy awaits.",
+      "status": "ONGOING",
+      "genres": ["Action", "Supernatural", "Gore"],
+      "img": "./manga-art/chainsaw_man.jpg",
+      "chapters": [
+        { "id": "csm-131", "title": "Chapter 131: Taste of Shit", "pages": 16 },
+        { "id": "csm-130", "title": "Chapter 130: Kill Building", "pages": 14 },
+        { "id": "csm-1", "title": "Chapter 1: Dog & Chainsaw", "pages": 22 }
+      ]
+    }
+  ],
+  "gridData": [
+    {
+      "title": "The Eminence in Shadow",
+      "ch": "Ch. 1",
+      "rating": 4.9,
+      "views": "15.4k",
+      "isNew": true,
+      "img": "./manga-art/Kage no Jitsuryokusha ni Naritakute!.jpg",
+      "chapters": [
+        { 
+          "id": "eis-1", 
+          "title": "Chapter 1: The Eminence in Shadow!", 
+          "pages": 0, 
+          "source": "./manga-source/Kage no Jitsuryokusha ni Naritakute! - Ch. 1.pdf",
+          "type": "pdf"
+        }
+      ]
+    },
+    {
+      "title": "Attack on Titan",
+      "ch": "Ch. 139",
+      "rating": 5.0,
+      "views": "25.5k",
+      "isNew": false,
+      "img": "./manga-art/attack_on_titan.jpg",
+      "chapters": [
+        { "id": "aot-139", "title": "Chapter 139: Toward the Tree on That Hill", "pages": 20 },
+        { "id": "aot-138", "title": "Chapter 138: A Long Dream", "pages": 18 },
+        { "id": "aot-137", "title": "Chapter 137: Titans", "pages": 16 },
+        { "id": "aot-1", "title": "Chapter 1: To You, 2000 Years From Now", "pages": 25 }
+      ]
+    },
+    {
+      "title": "Solo Leveling",
+      "ch": "Ch. 179",
+      "rating": 4.9,
+      "views": "18.2k",
+      "isNew": false,
+      "img": "./manga-art/solo_leveling.jpg",
+      "chapters": [
+        { "id": "sl-179", "title": "Chapter 179: Epilogue finale", "pages": 15 },
+        { "id": "sl-178", "title": "Chapter 178: The Monarch of Shadows", "pages": 12 },
+        { "id": "sl-1", "title": "Chapter 1: The Courage of the Weakest", "pages": 18 }
+      ]
+    },
+    {
+      "title": "Chainsaw Man",
+      "ch": "Ch. 131",
+      "rating": 4.8,
+      "views": "13.1k",
+      "isNew": true,
+      "img": "./manga-art/chainsaw_man.jpg",
+      "chapters": [
+        { "id": "csm-131", "title": "Chapter 131: Taste of Shit", "pages": 16 },
+        { "id": "csm-130", "title": "Chapter 130: Kill Building", "pages": 14 },
+        { "id": "csm-1", "title": "Chapter 1: Dog & Chainsaw", "pages": 22 }
+      ]
+    },
+    { "title": "One Piece", "ch": "Ch. 1084", "rating": 4.5, "views": "15.5k", "isNew": true, "img": "./manga-art/manga_cover_action.png" },
+    { "title": "Jujutsu Kaisen", "ch": "Ch. 221", "rating": 4.9, "views": "12.2k", "isNew": false, "img": "./manga-art/manga_cover_fantasy.png" },
+    { "title": "Demon Slayer", "ch": "Ch. 205", "rating": 5.0, "views": "22.0k", "isNew": false, "img": "./manga-art/manga_cover_action.png" },
+    { "title": "Blue Lock", "ch": "Ch. 215", "rating": 4.7, "views": "9.2k", "isNew": true, "img": "./manga-art/manga_cover_action.png" },
+    { "title": "Oshi No Ko", "ch": "Ch. 118", "rating": 4.9, "views": "14.5k", "isNew": true, "img": "./manga-art/manga_cover_fantasy.png" },
+    { "title": "Spy x Family", "ch": "Ch. 81", "rating": 4.8, "views": "20.1k", "isNew": false, "img": "./manga-art/manga_cover_action.png" },
+    { "title": "Black Clover", "ch": "Ch. 358", "rating": 4.1, "views": "7.8k", "isNew": false, "img": "./manga-art/manga_cover_fantasy.png" },
+    { "title": "Naruto", "ch": "Ch. 700", "rating": 4.6, "views": "50.1k", "isNew": false, "img": "./manga-art/manga_cover_action.png" },
+    { "title": "Dragon Ball", "ch": "Ch. 519", "rating": 4.7, "views": "45.5k", "isNew": false, "img": "./manga-art/manga_cover_fantasy.png" },
+    { "title": "Tokyo Ghoul", "ch": "Ch. 143", "rating": 4.8, "views": "12.2k", "isNew": false, "img": "./manga-art/manga_cover_action.png" },
+    { "title": "Death Note", "ch": "Ch. 108", "rating": 4.9, "views": "30.5k", "isNew": false, "img": "./manga-art/manga_cover_fantasy.png" },
+    { "title": "Haikyuu!!", "ch": "Ch. 402", "rating": 4.8, "views": "11.5k", "isNew": false, "img": "./manga-art/manga_cover_action.png" },
+    { "title": "Boruto", "ch": "Ch. 80", "rating": 3.5, "views": "6.2k", "isNew": true, "img": "./manga-art/manga_cover_fantasy.png" },
+    { "title": "Black Butler", "ch": "Ch. 196", "rating": 4.4, "views": "4.2k", "isNew": true, "img": "./manga-art/manga_cover_action.png" },
+    { "title": "Vinland Saga", "ch": "Ch. 202", "rating": 4.9, "views": "8.5k", "isNew": false, "img": "./manga-art/manga_cover_fantasy.png" },
+    { "title": "Vagabond", "ch": "Ch. 327", "rating": 5.0, "views": "7.1k", "isNew": false, "img": "./manga-art/manga_cover_action.png" },
+    { "title": "Berserk", "ch": "Ch. 373", "rating": 5.0, "views": "25.2k", "isNew": true, "img": "./manga-art/manga_cover_fantasy.png" },
+    { "title": "One Punch Man", "ch": "Ch. 184", "rating": 4.8, "views": "22.5k", "isNew": true, "img": "./manga-art/manga_cover_action.png" },
+    { "title": "Slam Dunk", "ch": "Ch. 276", "rating": 4.9, "views": "10.1k", "isNew": false, "img": "./manga-art/manga_cover_fantasy.png" },
+    { "title": "Monster", "ch": "Ch. 162", "rating": 4.9, "views": "5.5k", "isNew": false, "img": "./manga-art/manga_cover_action.png" },
+    { "title": "Kingdom", "ch": "Ch. 758", "rating": 4.9, "views": "9.2k", "isNew": true, "img": "./manga-art/manga_cover_fantasy.png" },
+    { "title": "Hunter x Hunter", "ch": "Ch. 400", "rating": 4.9, "views": "18.8k", "isNew": false, "img": "./manga-art/manga_cover_action.png" }
+  ]
+};
