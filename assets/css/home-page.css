@@ -1,19 +1,19 @@
 /* ═══════════════════════════════════════════════════════════
    Reader's Haven — Home Page Custom Styles
-   home-page.css
+   home-page.css  (Redesigned)
    ═══════════════════════════════════════════════════════════ */
 
 /* ── Custom Scrollbar (Webkit) ── */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #121212;
+    background: #0e0e0e;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #333;
+    background: #2a2a2a;
     border-radius: 999px;
 }
 
@@ -24,7 +24,7 @@
 /* ── Firefox Scrollbar ── */
 * {
     scrollbar-width: thin;
-    scrollbar-color: #333 #121212;
+    scrollbar-color: #2a2a2a #0e0e0e;
 }
 
 /* ── Hide Scrollbar Utility ── */
@@ -37,9 +37,14 @@
     scrollbar-width: none;
 }
 
-/* ── Hero Card Ambient Glow ── */
+/* ═══════════════════════════════════════════════════════════
+   HERO CAROUSEL
+   ═══════════════════════════════════════════════════════════ */
+
 .hero-card {
     position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    background: transparent;
 }
 
 .hero-card::before {
@@ -48,57 +53,228 @@
     inset: -1px;
     border-radius: 1rem;
     padding: 1px;
-    background: linear-gradient(135deg, rgba(214, 51, 108, 0.15), transparent 60%);
+    background: linear-gradient(135deg, rgba(214, 51, 108, 0.2), transparent 50%, rgba(214, 51, 108, 0.08));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.6s ease;
 }
 
 .hero-card:hover::before {
     opacity: 1;
 }
 
-/* ── Carousel Arrow Pulse on Hover ── */
+.carousel-inner {
+    min-height: 450px;
+    transition: opacity 0.3s ease;
+}
+
+@media (min-width: 1280px) {
+    .carousel-inner {
+        min-height: 520px;
+    }
+}
+
+@media (max-width: 767px) {
+    .carousel-inner {
+        min-height: auto;
+    }
+}
+
+#hero-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: #999;
+}
+
+#hero-title {
+    letter-spacing: -0.02em;
+    color: #fff;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+#hero-dots {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#hero-dots div,
+#hero-dots-mobile div {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Active dot glow */
+#hero-dots div:first-child,
+#hero-dots-mobile div:first-child {
+    box-shadow: 0 0 8px rgba(214, 51, 108, 0.4);
+}
+
+/* ── Carousel Arrow Hover ── */
 .carousel-arrow:hover {
     box-shadow: 0 0 14px rgba(214, 51, 108, 0.35);
 }
 
-/* ── Manga Card Hover Glow ── */
+/* ═══════════════════════════════════════════════════════════
+   MANGA CARDS
+   ═══════════════════════════════════════════════════════════ */
+
 .manga-card {
     transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
         box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
         background-color 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .manga-card:hover {
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 12px 30px rgba(214, 51, 108, 0.12),
-        0 0 0 1px rgba(214, 51, 108, 0.15);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow:
+        0 16px 40px rgba(214, 51, 108, 0.12),
+        0 0 0 1px rgba(214, 51, 108, 0.18),
+        0 0 30px rgba(214, 51, 108, 0.06);
+    border-color: rgba(214, 51, 108, 0.15);
 }
 
-/* ── Card Image Zoom on Hover ── */
-.manga-card .card-img {
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+/* Card Image Zoom */
+.manga-card-image-wrap {
+    position: relative;
 }
 
-.manga-card:hover .card-img {
-    transform: scale(1.08);
+.manga-card-image-wrap img {
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
 
-/* ── Card Title Accent on Hover ── */
+.manga-card:hover .manga-card-image-wrap img {
+    transform: scale(1.1) !important;
+}
+
+/* Play Icon Overlay on Hover */
+.manga-card-image-wrap::after {
+    content: '\f04b';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    color: white;
+    background: #D6336C;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    z-index: 20;
+    box-shadow: 0 0 30px rgba(214, 51, 108, 0.5);
+    font-size: 14px;
+}
+
+.manga-card:hover .manga-card-image-wrap::after {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Bottom gradient on card image */
+.manga-card-image-wrap::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to top, rgba(32, 32, 32, 0.9), transparent);
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.manga-card:hover .manga-card-image-wrap::before {
+    opacity: 1;
+}
+
+/* Card Title Accent on Hover */
 .manga-card:hover .card-title {
     color: #D6336C;
 }
 
-/* ── Filter Tab Active Glow ── */
-.filter-tab.active {
-    box-shadow: 0 0 10px rgba(214, 51, 108, 0.15);
+/* ═══════════════════════════════════════════════════════════
+   FILTER TABS
+   ═══════════════════════════════════════════════════════════ */
+
+.filter-tab {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #A0A0A0;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
-/* ── Sidebar Link Hover Indicator ── */
+.filter-tab::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(214, 51, 108, 0.12), rgba(214, 51, 108, 0.04));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.filter-tab:hover::before {
+    opacity: 1;
+}
+
+.filter-tab:hover {
+    color: #D6336C;
+    border-color: rgba(214, 51, 108, 0.4);
+}
+
+.filter-tab.active {
+    background: linear-gradient(135deg, rgba(214, 51, 108, 0.2), rgba(214, 51, 108, 0.1)) !important;
+    border-color: #D6336C !important;
+    color: #D6336C !important;
+    box-shadow: 0 0 20px rgba(214, 51, 108, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.filter-tab:active {
+    transform: scale(0.97);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SEARCH DROPDOWN
+   ═══════════════════════════════════════════════════════════ */
+
+#search-results-dropdown {
+    border: 1px solid rgba(214, 51, 108, 0.15);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(214, 51, 108, 0.08);
+}
+
+.search-result-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background: rgba(214, 51, 108, 0.06) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SIDEBAR
+   ═══════════════════════════════════════════════════════════ */
+
 .sidebar-link {
     position: relative;
     transition: background-color 0.4s ease;
@@ -121,13 +297,15 @@
     transform: translateY(-50%) scaleY(1);
 }
 
-/* ── Fade-in Animation for Cards ── */
+/* ═══════════════════════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════════════════════ */
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
         transform: translateY(16px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -139,15 +317,9 @@
     opacity: 0;
 }
 
-/* ── NEW Badge Shimmer ── */
 @keyframes shimmer {
-    0% {
-        background-position: -100% 0;
-    }
-
-    100% {
-        background-position: 200% 0;
-    }
+    0% { background-position: -100% 0; }
+    100% { background-position: 200% 0; }
 }
 
 .badge-new {
@@ -156,76 +328,72 @@
     animation: shimmer 2.5s ease-in-out infinite;
 }
 
-/* ── Star Rating Styling ── */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ── Star Rating ── */
 .stars-row i {
     font-size: 10px;
     color: #ffd700;
 }
 
-/* ── Notification Dot Pulse ── */
-@keyframes pulse-dot {
-
-    0%,
-    100% {
-        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.5);
-    }
-
-    50% {
-        box-shadow: 0 0 0 4px rgba(239, 68, 68, 0);
-    }
-}
-
-/* ── Carousel Styling ── */
-.carousel-inner {
-    min-height: 450px;
-    transition: opacity 0.3s ease;
-}
-
-@media (min-width: 1280px) {
-    .carousel-inner {
-        min-height: 520px;
-    }
-}
-
-#hero-desc {
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    color: #999;
-}
-
-#hero-title {
-    letter-spacing: -0.02em;
-    color: #fff;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-/* ── Section Title Icon ── */
+/* ── Section Title ── */
 .section-title-icon {
     box-shadow: 0 0 15px rgba(214, 51, 108, 0.3);
 }
 
-/* ── Mobile Polish ── */
-@media (max-width: 767px) {
-    .carousel-inner {
-        min-height: auto;
-    }
+/* ═══════════════════════════════════════════════════════════
+   BACK TO TOP BUTTON
+   ═══════════════════════════════════════════════════════════ */
+
+#back-to-top {
+    box-shadow: 0 4px 20px rgba(214, 51, 108, 0.35);
 }
 
-/* ── Carousel Navigation ── */
-#hero-dots {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 4px 20px rgba(214, 51, 108, 0.35); }
+    50% { box-shadow: 0 4px 30px rgba(214, 51, 108, 0.55), 0 0 0 6px rgba(214, 51, 108, 0.1); }
 }
 
-#hero-dots div,
-#hero-dots-mobile div {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+#back-to-top.opacity-100 {
+    animation: pulseGlow 2.5s ease-in-out infinite;
 }
 
-/* ── Global Transitions ── */
+/* ═══════════════════════════════════════════════════════════
+   HERO GENRE TAGS
+   ═══════════════════════════════════════════════════════════ */
+
+.hero-genre-tag {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #d1d5db !important;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.hero-genre-tag:hover {
+    background: #D6336C !important;
+    color: white !important;
+    border-color: #D6336C !important;
+    box-shadow: 0 4px 12px rgba(214, 51, 108, 0.3);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   GLOBAL TRANSITIONS & PAGE BODY
+   ═══════════════════════════════════════════════════════════ */
+
 body,
 header,
 aside,
@@ -237,7 +405,6 @@ footer,
     transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
-/* ── Page Transitions ── */
 body {
     opacity: 0;
     transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -251,7 +418,7 @@ body.fade-out {
     opacity: 0;
 }
 
-/* ── Global Background Image ── */
+/* ── Background Image ── */
 body {
     background-image: linear-gradient(rgba(18, 18, 18, 0.92), rgba(18, 18, 18, 0.92)), url('../img/website/bg.jpg');
     background-size: cover;
@@ -261,8 +428,39 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════
+   PAGINATION POLISH
+   ═══════════════════════════════════════════════════════════ */
+
+#pagination-container button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.page-numbers button {
+    transition: all 0.25s ease;
+}
+
+.page-numbers button:hover {
+    transform: translateY(-2px);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER POLISH
+   ═══════════════════════════════════════════════════════════ */
+
+footer a.hover\:text-accent:hover {
+    text-decoration: none;
+}
+
+footer input:focus {
+    box-shadow: 0 0 0 3px rgba(214, 51, 108, 0.1);
+}
+
+/* ═══════════════════════════════════════════════════════════
    LIGHT MODE THEME
    ═══════════════════════════════════════════════════════════ */
+
 .light-mode {
     --bg-darker: #f8fafc;
     --bg-card: #ffffff;
@@ -285,8 +483,7 @@ body {
 }
 
 .light-mode .bg-card,
-.light-mode .bg-darker,
-.light-mode .hero-card {
+.light-mode .bg-darker {
     background-color: #ffffff;
 }
 
@@ -317,53 +514,40 @@ body {
 }
 
 .light-mode .hero-card {
-    border-color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(214, 51, 108, 0.12);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(6px);
 }
 
-/* ── Section: Manga Card & UI Interactions ── */
-.manga-card-image-wrap {
-    position: relative;
+/* Light mode: soften the dark gradient overlays inside the hero */
+.light-mode .hero-card > div:nth-child(2) {
+    background: linear-gradient(to right, rgba(255,255,255,0.7), rgba(255,255,255,0.25), transparent) !important;
 }
 
-.manga-card-image-wrap img {
-    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) !important;
+.light-mode #hero-title {
+    color: #0f172a;
+    text-shadow: 0 2px 8px rgba(255,255,255,0.5);
 }
 
-.manga-card:hover .manga-card-image-wrap img {
-    transform: scale(1.1) !important;
+.light-mode #hero-desc {
+    color: #475569 !important;
 }
 
-/* The 'Read' icon centered on the cover */
-.manga-card-image-wrap::after {
-    content: '\f04b';
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.5);
-    color: white;
-    background: #D6336C;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none;
-    z-index: 20;
-    box-shadow: 0 0 25px rgba(214, 51, 108, 0.5);
+.light-mode #hero-chapter {
+    color: #D6336C;
 }
 
-.manga-card:hover .manga-card-image-wrap::after {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+.light-mode .manga-card {
+    border-color: #e2e8f0;
+    background-color: #ffffff;
 }
 
-/* ── Section: Specialized UI Fixes ── */
+.light-mode .manga-card:hover {
+    box-shadow: 0 12px 30px rgba(214, 51, 108, 0.1), 0 0 0 1px rgba(214, 51, 108, 0.12);
+    border-color: rgba(214, 51, 108, 0.2);
+}
+
 .light-mode header button:hover {
     background-color: #f1f5f9 !important;
     color: #D6336C !important;
@@ -373,26 +557,6 @@ body {
 .light-mode [id^='dropdown-'] a:hover {
     background-color: #D6336C !important;
     color: #ffffff !important;
-}
-
-.filter-tab {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #A0A0A0;
-    cursor: pointer;
-}
-
-.filter-tab:hover {
-    color: #D6336C;
-    border-color: #D6336C;
-    background: rgba(214, 51, 108, 0.08);
-}
-
-.filter-tab.active {
-    background: rgba(214, 51, 108, 0.15) !important;
-    border-color: #D6336C !important;
-    color: #D6336C !important;
-    box-shadow: 0 0 20px rgba(214, 51, 108, 0.2);
 }
 
 .light-mode .filter-tab {
@@ -414,20 +578,6 @@ body {
     box-shadow: 0 4px 12px rgba(214, 51, 108, 0.25);
 }
 
-/* ── Section: Hero Customizations ── */
-.hero-genre-tag {
-    background: rgba(255, 255, 255, 0.08) !important;
-    color: #d1d5db !important;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease;
-}
-
-.hero-genre-tag:hover {
-    background: #D6336C !important;
-    color: white !important;
-    border-color: #D6336C !important;
-}
-
 .light-mode .hero-genre-tag {
     background: rgba(214, 51, 108, 0.08) !important;
     color: #D6336C !important;
@@ -437,4 +587,27 @@ body {
 .light-mode .hero-genre-tag:hover {
     background: #D6336C !important;
     color: white !important;
+}
+
+.light-mode #search-results-dropdown {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-mode .search-result-item:hover {
+    background: rgba(214, 51, 108, 0.06) !important;
+}
+
+.light-mode .stars-row i {
+    color: #f59e0b;
+}
+
+.light-mode footer {
+    background-color: #f8fafc;
+}
+
+.light-mode footer input {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
 }
