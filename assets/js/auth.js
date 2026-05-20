@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════════════════
    Reader's Haven — Authentication Logic
    auth.js
-   Handles both login.html and signup.html
+   Authentication logic for login and signup
    ═══════════════════════════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', () => {

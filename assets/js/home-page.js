@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // Filter tabs (with actual filtering)
+    // Filter tabs
     const filterTabs = document.querySelectorAll('.filter-tab');
     let activeFilter = 'latest';
     const filterMap = ['latest', 'popular', 'completed', 'upcoming'];
@@ -438,7 +438,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateAuthState();
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') updateThemeUI(true);
-    // Utility: showalert (mirrors auth.js)
+    // Utility: Display alert
     function showAlert(message, type = 'error') {
         const existing = document.querySelector('.auth-alert');
         if (existing) existing.remove();
