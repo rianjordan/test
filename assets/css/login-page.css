@@ -1,9 +1,6 @@
-/* ═══════════════════════════════════════════════════════════
-   Reader's Haven — Login Page Custom Styles
-   login-page.css
-   ═══════════════════════════════════════════════════════════ */
+/* Reader's Haven - Login Page Custom Styles */
 
-/* ── Background Ambient Glow ── */
+/* Background Ambient Glow */
 .login-bg-glow {
     position: fixed;
     border-radius: 50%;
@@ -54,7 +51,7 @@
     }
 }
 
-/* ── Login Card Entry Animation ── */
+/* Login Card Entry Animation */
 .login-card {
     animation: cardSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
@@ -71,7 +68,7 @@
     }
 }
 
-/* ── Login Button Ripple Effect ── */
+/* Login Button Ripple Effect */
 .login-btn {
     position: relative;
     overflow: hidden;
@@ -95,7 +92,7 @@
     height: 300px;
 }
 
-/* ── Social Button Hover Glow ── */
+/* Social Button Hover Glow */
 .social-btn {
     position: relative;
     overflow: hidden;
@@ -114,18 +111,18 @@
     opacity: 1;
 }
 
-/* ── Input Focus Transition Enhancement ── */
+/* Input Focus Transition Enhancement */
 input:focus+.input-focus-glow,
 input:focus {
     box-shadow: 0 0 0 3px rgba(214, 51, 108, 0.08);
 }
 
-/* ── Checkbox Accent Color Override ── */
+/* Checkbox Accent Color Override */
 input[type="checkbox"]:checked {
     accent-color: #D6336C;
 }
 
-/* ── Custom Scrollbar ── */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 6px;
 }
@@ -144,7 +141,7 @@ input[type="checkbox"]:checked {
 }
 
 
-/* -- Light Mode Theme -- */
+/* Light Mode Theme */
 .light-mode {
     --bg-darker: #f8fafc;
     --bg-card: #ffffff;
@@ -203,7 +200,7 @@ input,
     transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
-/* -- Page Transitions -- */
+/* Page Transitions */
 body {
     opacity: 0;
     transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -227,7 +224,7 @@ body.fade-out {
     background-color: #FF4081 !important;
 }
 
-/* -- System UX Light Mode Overrides -- */
+/* System UX Light Mode Overrides */
 .light-mode .group:hover .group-hover\:text-white {
     color: #0f172a !important;
 }
@@ -252,7 +249,7 @@ body.fade-out {
     color: #0f172a !important;
 }
 
-/* -- Global Background Image -- */
+/* Global Background Image */
 body {
     background-image: linear-gradient(rgba(18, 18, 18, 0.92), rgba(18, 18, 18, 0.92)), url('../img/website/loginbg.jpg');
     background-size: cover;

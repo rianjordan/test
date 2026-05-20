@@ -1,11 +1,8 @@
-/* ═══════════════════════════════════════════════════════════
-   Reader's Haven — Home Page JavaScript
-   home-page.js
-   ═══════════════════════════════════════════════════════════ */
+/* Reader's Haven - Home Page JavaScript */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ─── 1. DROPDOWN INTERACTIVITY ───
+    // Dropdown interactivity
 
     function setupDropdown(btnId, dropdownId) {
         const btn = document.getElementById(btnId);
@@ -42,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // ─── 2. SIDEBAR DRAWER TOGGLE ───
+    // Sidebar drawer toggle
 
     const btnHamburger = document.getElementById('btn-hamburger');
     const btnCloseSidebar = document.getElementById('btn-close-sidebar');
@@ -73,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // --- 3. FILTER TABS (with actual filtering) ---
+    // Filter tabs (with actual filtering)
     const filterTabs = document.querySelectorAll('.filter-tab');
     let activeFilter = 'latest';
     const filterMap = ['latest', 'popular', 'completed', 'upcoming'];
@@ -108,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // ─── 4. HERO CAROUSEL ───
+    // Hero carousel
 
     // Load from global MangaData store or fallback if not loaded
     const carouselData = window.MangaData?.carouselData || [];
@@ -209,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateSlideUI();
 
 
-    // ─── 5. MANGA GRID WITH PAGINATION ───
+    // Manga grid with pagination
 
     const gridData = window.MangaData?.gridData || [];
     const gridContainer = document.getElementById('manga-grid');
@@ -306,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderGrid();
 
-    // ─── 5.5 LIVE SEARCH ───
+    // Live search
     const searchInput = document.getElementById('search-input');
     const searchDropdown = document.getElementById('search-results-dropdown');
 
@@ -356,7 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // --- 6. AUTH & THEME LOGIC ---
+    // Auth & theme logic
     const headerAuthContainer = document.getElementById('header-auth-container');
     const sidebarAuthBtn = document.getElementById('sidebar-auth-btn');
     const authText = document.getElementById('auth-text');
@@ -441,7 +438,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateAuthState();
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') updateThemeUI(true);
-    // --- UTILITY: showAlert (mirrors auth.js) ---
+    // Utility: showalert (mirrors auth.js)
     function showAlert(message, type = 'error') {
         const existing = document.querySelector('.auth-alert');
         if (existing) existing.remove();
@@ -458,10 +455,10 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => { alert.style.opacity = '0'; alert.style.transform = 'translateX(-50%) translateY(-20px)'; setTimeout(() => alert.remove(), 350); }, 3500);
     }
 
-    // --- 7. PAGE TRANSITIONS ---
+    // Page transitions
     document.body.classList.add('loaded');
 
-    // --- 8. SCROLL INTERACTIONS ---
+    // Scroll interactions
     const header = document.getElementById('main-header');
     const backToTop = document.getElementById('back-to-top');
 
@@ -518,7 +515,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ─── 9. MANGA DETAILS & READER MODALS ───
+    // Manga details & reader modals
 
     const detailModal = document.getElementById('manga-detail-modal');
     const readerModal = document.getElementById('manga-reader-modal');
@@ -1290,7 +1287,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 4.5 CAROUSEL AUTO-PLAY ---
+    // Carousel auto-play
     let autoPlayInterval = setInterval(() => {
         currentSlide = currentSlide < carouselData.length - 1 ? currentSlide + 1 : 0;
         updateSlideUI();

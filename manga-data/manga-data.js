@@ -1,7 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   Reader's Haven — Manga Data Store
-   manga-data.js
-   ═══════════════════════════════════════════════════════════ */
+/* Reader's Haven - Manga Data Store */
 
 window.MangaData = {
   "carouselData": [

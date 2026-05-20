@@ -6,13 +6,13 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ─── THEME INITIALIZATION ───
+    // Theme initialization
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
         document.documentElement.classList.add('light-mode');
     }
 
-    // ─── PASSWORD VISIBILITY TOGGLE ───
+    // Password visibility toggle
     const toggleBtn = document.getElementById('toggle-password');
     if (toggleBtn) {
         // Find the password input in the same container
@@ -30,9 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // ═══════════════════════════════════════════════════
     // SIGNUP LOGIC
-    // ═══════════════════════════════════════════════════
     const signupForm = document.getElementById('signup-form');
 
     if (signupForm) {
@@ -143,9 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // ═══════════════════════════════════════════════════
     // LOGIN LOGIC
-    // ═══════════════════════════════════════════════════
     const loginForm = document.getElementById('login-form');
 
     if (loginForm) {
@@ -192,9 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
 
-        // ═══════════════════════════════════════════════════
         // FORGOT PASSWORD FLOW (3-Step Overlay)
-        // ═══════════════════════════════════════════════════
 
         const forgotLink = document.getElementById('forgot-password-link');
         const forgotOverlay = document.getElementById('forgot-overlay');
@@ -359,9 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // ═══════════════════════════════════════════════════
     // UTILITY FUNCTIONS
-    // ═══════════════════════════════════════════════════
 
     function isValidEmail(email) {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -421,7 +413,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => alert.remove(), 350);
         }, 3500);
     }
-    // --- 7. PAGE TRANSITIONS ---
+    // Page transitions
     document.body.classList.add('loaded');
 
     window.addEventListener('pageshow', (event) => {

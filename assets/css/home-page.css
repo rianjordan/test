@@ -1,9 +1,6 @@
-/* ═══════════════════════════════════════════════════════════
-   Reader's Haven — Home Page Custom Styles
-   home-page.css  (Redesigned)
-   ═══════════════════════════════════════════════════════════ */
+/* Reader's Haven - Home Page Custom Styles */
 
-/* ── Custom Scrollbar (Webkit) ── */
+/* Custom Scrollbar (Webkit) */
 ::-webkit-scrollbar {
     width: 6px;
 }
@@ -21,13 +18,13 @@
     background: #D6336C;
 }
 
-/* ── Firefox Scrollbar ── */
+/* Firefox Scrollbar */
 * {
     scrollbar-width: thin;
     scrollbar-color: #2a2a2a #0e0e0e;
 }
 
-/* ── Hide Scrollbar Utility ── */
+/* Hide Scrollbar Utility */
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
@@ -37,9 +34,7 @@
     scrollbar-width: none;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   HERO CAROUSEL
-   ═══════════════════════════════════════════════════════════ */
+/* HERO CAROUSEL */
 
 .hero-card {
     position: relative;
@@ -114,14 +109,12 @@
     box-shadow: 0 0 8px rgba(214, 51, 108, 0.4);
 }
 
-/* ── Carousel Arrow Hover ── */
+/* Carousel Arrow Hover */
 .carousel-arrow:hover {
     box-shadow: 0 0 14px rgba(214, 51, 108, 0.35);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   MANGA CARDS
-   ═══════════════════════════════════════════════════════════ */
+/* MANGA CARDS */
 
 .manga-card {
     transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
@@ -206,9 +199,7 @@
     color: #D6336C;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   FILTER TABS
-   ═══════════════════════════════════════════════════════════ */
+/* FILTER TABS */
 
 .filter-tab {
     background: rgba(255, 255, 255, 0.03);
@@ -248,9 +239,7 @@
     transform: scale(0.97);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   SEARCH DROPDOWN
-   ═══════════════════════════════════════════════════════════ */
+/* SEARCH DROPDOWN */
 
 #search-results-dropdown {
     border: 1px solid rgba(214, 51, 108, 0.15);
@@ -271,9 +260,7 @@
     background: rgba(214, 51, 108, 0.06) !important;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   SIDEBAR
-   ═══════════════════════════════════════════════════════════ */
+/* SIDEBAR */
 
 .sidebar-link {
     position: relative;
@@ -297,9 +284,7 @@
     transform: translateY(-50%) scaleY(1);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   ANIMATIONS
-   ═══════════════════════════════════════════════════════════ */
+/* ANIMATIONS */
 
 @keyframes fadeInUp {
     from {
@@ -343,20 +328,18 @@
     animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-/* ── Star Rating ── */
+/* Star Rating */
 .stars-row i {
     font-size: 10px;
     color: #ffd700;
 }
 
-/* ── Section Title ── */
+/* Section Title */
 .section-title-icon {
     box-shadow: 0 0 15px rgba(214, 51, 108, 0.3);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   BACK TO TOP BUTTON
-   ═══════════════════════════════════════════════════════════ */
+/* BACK TO TOP BUTTON */
 
 #back-to-top {
     box-shadow: 0 4px 20px rgba(214, 51, 108, 0.35);
@@ -371,9 +354,7 @@
     animation: pulseGlow 2.5s ease-in-out infinite;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   HERO GENRE TAGS
-   ═══════════════════════════════════════════════════════════ */
+/* HERO GENRE TAGS */
 
 .hero-genre-tag {
     background: rgba(255, 255, 255, 0.08) !important;
@@ -390,9 +371,7 @@
     box-shadow: 0 4px 12px rgba(214, 51, 108, 0.3);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   GLOBAL TRANSITIONS & PAGE BODY
-   ═══════════════════════════════════════════════════════════ */
+/* GLOBAL TRANSITIONS & PAGE BODY */
 
 body,
 header,
@@ -418,7 +397,7 @@ body.fade-out {
     opacity: 0;
 }
 
-/* ── Background Image ── */
+/* Background Image */
 body {
     background-image: linear-gradient(rgba(18, 18, 18, 0.92), rgba(18, 18, 18, 0.92)), url('../img/website/bg.jpg');
     background-size: cover;
@@ -427,9 +406,7 @@ body {
     background-repeat: no-repeat;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   PAGINATION POLISH
-   ═══════════════════════════════════════════════════════════ */
+/* PAGINATION POLISH */
 
 #pagination-container button:disabled {
     opacity: 0.3;
@@ -445,9 +422,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   FOOTER POLISH
-   ═══════════════════════════════════════════════════════════ */
+/* FOOTER POLISH */
 
 footer a.hover\:text-accent:hover {
     text-decoration: none;
@@ -457,9 +432,7 @@ footer input:focus {
     box-shadow: 0 0 0 3px rgba(214, 51, 108, 0.1);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   LIGHT MODE THEME
-   ═══════════════════════════════════════════════════════════ */
+/* LIGHT MODE THEME */
 
 .light-mode {
     --bg-darker: #f8fafc;
