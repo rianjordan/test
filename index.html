@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,19 @@
 
     <!-- Pre-load Theme to prevent Flicker -->
     <script>
-        (function() {
+        (function () {
             const theme = localStorage.getItem('theme');
             if (theme === 'light') document.documentElement.classList.add('light-mode');
         })();
     </script>
-    <meta name="description" content="Reader's Haven — Discover, read, and track your favorite manga. Browse the latest releases, hot updates, and curated collections in a sleek dark-mode reader.">
+    <meta name="description"
+        content="Reader's Haven — Discover, read, and track your favorite manga. Browse the latest releases, hot updates, and curated collections in a sleek dark-mode reader.">
 
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -53,10 +56,12 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/css/home-page.css">
 </head>
+
 <body class=" text-white font-sans antialiased overflow-x-hidden min-h-screen flex flex-col">
 
     <!-- 1. STICKY HEADER -->
-    <header id="main-header" class="sticky top-0 z-40 bg-darker/95 backdrop-blur-md border-b border-gray-800/60 shadow-lg py-3 px-4 md:px-8 flex justify-between items-center transition-all duration-300">
+    <header id="main-header"
+        class="sticky top-0 z-40 bg-darker/95 backdrop-blur-md border-b border-gray-800/60 shadow-lg py-3 px-4 md:px-8 flex justify-between items-center transition-all duration-300">
 
         <!-- Left: Logo -->
         <a href="index.html" class="flex items-center gap-3 cursor-pointer group" id="logo-link">
@@ -66,33 +71,43 @@
         <!-- Center Navigation -->
         <nav class="hidden lg:flex items-center gap-3 relative">
             <div class="relative">
-                <button id="btn-browse" class="flex items-center gap-2 bg-card hover:bg-gray-800 text-muted hover:text-white px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-md">
+                <button id="btn-browse"
+                    class="flex items-center gap-2 bg-card hover:bg-gray-800 text-muted hover:text-white px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-md">
                     BROWSE CATALOG
                 </button>
                 <!-- Browse Dropdown -->
-                <div id="dropdown-browse" class="absolute top-full left-0 mt-2 w-48 bg-card border border-gray-700/50 rounded-2xl shadow-2xl opacity-0 invisible transition-all duration-300 transform translate-y-2 z-50 py-2">
-                    <a href="#" class="block px-5 py-2.5 text-sm text-muted hover:text-accent hover:bg-accent/5 transition-all">Manhwa</a>
-                    <a href="#" class="block px-5 py-2.5 text-sm text-muted hover:text-accent hover:bg-accent/5 transition-all">Manga</a>
-                    <a href="#" class="block px-5 py-2.5 text-sm text-muted hover:text-accent hover:bg-accent/5 transition-all">Novel</a>
+                <div id="dropdown-browse"
+                    class="absolute top-full left-0 mt-2 w-48 bg-card border border-gray-700/50 rounded-2xl shadow-2xl opacity-0 invisible transition-all duration-300 transform translate-y-2 z-50 py-2">
+                    <a href="#"
+                        class="block px-5 py-2.5 text-sm text-muted hover:text-accent hover:bg-accent/5 transition-all">Manhwa</a>
+                    <a href="#"
+                        class="block px-5 py-2.5 text-sm text-muted hover:text-accent hover:bg-accent/5 transition-all">Manga</a>
+                    <a href="#"
+                        class="block px-5 py-2.5 text-sm text-muted hover:text-accent hover:bg-accent/5 transition-all">Novel</a>
                 </div>
             </div>
 
             <div class="relative">
-                <button id="btn-history" class="flex items-center gap-2 bg-card hover:bg-gray-800 text-muted hover:text-white px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-md">
+                <button id="btn-history"
+                    class="flex items-center gap-2 bg-card hover:bg-gray-800 text-muted hover:text-white px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-md">
                     MY HISTORY
                 </button>
                 <!-- History Dropdown -->
-                <div id="dropdown-history" class="absolute top-full left-0 mt-2 w-72 bg-card border border-gray-700/50 rounded-2xl shadow-2xl opacity-0 invisible transition-all duration-300 transform translate-y-2 z-50 overflow-hidden">
-                    <div class="p-4 border-b border-gray-700/50 font-bold text-accent text-sm tracking-wide">Recently Read</div>
+                <div id="dropdown-history"
+                    class="absolute top-full left-0 mt-2 w-72 bg-card border border-gray-700/50 rounded-2xl shadow-2xl opacity-0 invisible transition-all duration-300 transform translate-y-2 z-50 overflow-hidden">
+                    <div class="p-4 border-b border-gray-700/50 font-bold text-accent text-sm tracking-wide">Recently
+                        Read</div>
                     <div class="p-3 flex items-center gap-3 hover:bg-gray-800/60 cursor-pointer transition-colors">
-                        <img src="https://placehold.co/40x60/121212/D6336C?text=OP" class="w-10 h-14 object-cover rounded-lg" alt="One Piece">
+                        <img src="https://placehold.co/40x60/121212/D6336C?text=OP"
+                            class="w-10 h-14 object-cover rounded-lg" alt="One Piece">
                         <div>
                             <div class="font-semibold text-sm">One Piece</div>
                             <div class="text-xs text-muted">Ch. 1084 · 2h ago</div>
                         </div>
                     </div>
                     <div class="p-3 flex items-center gap-3 hover:bg-gray-800/60 cursor-pointer transition-colors">
-                        <img src="https://placehold.co/40x60/121212/D6336C?text=JK" class="w-10 h-14 object-cover rounded-lg" alt="Jujutsu Kaisen">
+                        <img src="https://placehold.co/40x60/121212/D6336C?text=JK"
+                            class="w-10 h-14 object-cover rounded-lg" alt="Jujutsu Kaisen">
                         <div>
                             <div class="font-semibold text-sm">Jujutsu Kaisen</div>
                             <div class="text-xs text-muted">Ch. 221 · 5h ago</div>
@@ -102,20 +117,28 @@
             </div>
 
             <div class="relative">
-                <button id="btn-genres" class="flex items-center gap-2 bg-card hover:bg-gray-800 text-muted hover:text-white px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-md">
+                <button id="btn-genres"
+                    class="flex items-center gap-2 bg-card hover:bg-gray-800 text-muted hover:text-white px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-md">
                     GENRE FILTERS
                 </button>
                 <!-- Genre Dropdown -->
-                <div id="dropdown-genres" class="absolute top-full left-0 mt-2 w-52 bg-card border border-gray-700/50 rounded-2xl shadow-2xl opacity-0 invisible transition-all duration-300 transform translate-y-2 z-50 py-2">
-                    <a href="#" class="block px-5 py-2.5 text-sm text-muted hover:text-accent hover:bg-accent/5 transition-all">Action</a>
-                    <a href="#" class="block px-5 py-2.5 text-sm text-muted hover:text-accent hover:bg-accent/5 transition-all">Romance</a>
-                    <a href="#" class="block px-5 py-2.5 text-sm text-muted hover:text-accent hover:bg-accent/5 transition-all">Fantasy</a>
-                    <a href="#" class="block px-5 py-2.5 text-sm text-muted hover:text-accent hover:bg-accent/5 transition-all">Horror</a>
-                    <a href="#" class="block px-5 py-2.5 text-sm text-muted hover:text-accent hover:bg-accent/5 transition-all">Sci-Fi</a>
+                <div id="dropdown-genres"
+                    class="absolute top-full left-0 mt-2 w-52 bg-card border border-gray-700/50 rounded-2xl shadow-2xl opacity-0 invisible transition-all duration-300 transform translate-y-2 z-50 py-2">
+                    <a href="#"
+                        class="block px-5 py-2.5 text-sm text-muted hover:text-accent hover:bg-accent/5 transition-all">Action</a>
+                    <a href="#"
+                        class="block px-5 py-2.5 text-sm text-muted hover:text-accent hover:bg-accent/5 transition-all">Romance</a>
+                    <a href="#"
+                        class="block px-5 py-2.5 text-sm text-muted hover:text-accent hover:bg-accent/5 transition-all">Fantasy</a>
+                    <a href="#"
+                        class="block px-5 py-2.5 text-sm text-muted hover:text-accent hover:bg-accent/5 transition-all">Horror</a>
+                    <a href="#"
+                        class="block px-5 py-2.5 text-sm text-muted hover:text-accent hover:bg-accent/5 transition-all">Sci-Fi</a>
                 </div>
             </div>
 
-            <button class="flex items-center gap-2 bg-card hover:bg-gray-800 text-muted hover:text-white px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-md">
+            <button
+                class="flex items-center gap-2 bg-card hover:bg-gray-800 text-muted hover:text-white px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-md">
                 NEW RELEASES
             </button>
         </nav>
@@ -123,71 +146,99 @@
         <!-- Right: Actions -->
         <div class="flex items-center gap-3 sm:gap-5">
             <!-- Search Bar -->
-            <div class="hidden md:flex items-center bg-card rounded-full px-4 py-2 gap-2 border border-transparent focus-within:border-accent focus-within:shadow-[0_0_12px_rgba(214,51,108,0.2)] transition-all duration-300 relative">
+            <div
+                class="hidden md:flex items-center bg-card rounded-full px-4 py-2 gap-2 border border-transparent focus-within:border-accent focus-within:shadow-[0_0_12px_rgba(214,51,108,0.2)] transition-all duration-300 relative">
                 <i class="fa-solid fa-magnifying-glass text-muted text-sm"></i>
-                <input type="text" placeholder="Search manga..." class="bg-transparent border-none outline-none text-sm w-36 lg:w-48 text-white placeholder-muted" id="search-input">
+                <input type="text" placeholder="Search manga..."
+                    class="bg-transparent border-none outline-none text-sm w-36 lg:w-48 text-white placeholder-muted"
+                    id="search-input">
                 <!-- Search Results Dropdown -->
-                <div id="search-results-dropdown" class="hidden absolute top-full left-0 mt-2 w-80 bg-card/95 backdrop-blur-xl border border-gray-700/50 rounded-2xl shadow-2xl z-50 overflow-hidden max-h-[400px] overflow-y-auto no-scrollbar"></div>
+                <div id="search-results-dropdown"
+                    class="hidden absolute top-full left-0 mt-2 w-80 bg-card/95 backdrop-blur-xl border border-gray-700/50 rounded-2xl shadow-2xl z-50 overflow-hidden max-h-[400px] overflow-y-auto no-scrollbar">
+                </div>
             </div>
 
             <!-- User Avatar -->
-            <div class="w-9 h-9 rounded-full bg-surface flex items-center justify-center cursor-pointer hover:ring-2 hover:ring-accent transition-all duration-300">
+            <div
+                class="w-9 h-9 rounded-full bg-surface flex items-center justify-center cursor-pointer hover:ring-2 hover:ring-accent transition-all duration-300">
                 <i class="fa-solid fa-user text-sm text-muted"></i>
             </div>
 
             <!-- Auth Links -->
-            <div id="header-auth-container" class="hidden sm:flex items-center gap-2.5 border-l border-gray-800/60 pl-4 ml-1">
-                <a href="login.html" class="text-[11px] font-black text-muted hover:text-accent transition-colors duration-300 tracking-tighter">LOG IN</a>
+            <div id="header-auth-container"
+                class="hidden sm:flex items-center gap-2.5 border-l border-gray-800/60 pl-4 ml-1">
+                <a href="login.html"
+                    class="text-[11px] font-black text-muted hover:text-accent transition-colors duration-300 tracking-tighter">LOG
+                    IN</a>
                 <div class="h-3 w-[1px] bg-gray-800/80"></div>
-                <a href="signup.html" class="text-[11px] font-black text-muted hover:text-accent transition-colors duration-300 tracking-tighter">SIGN UP</a>
+                <a href="signup.html"
+                    class="text-[11px] font-black text-muted hover:text-accent transition-colors duration-300 tracking-tighter">SIGN
+                    UP</a>
             </div>
 
             <!-- Notification -->
             <div class="relative cursor-pointer group">
-                <i class="fa-regular fa-bell text-xl text-muted group-hover:text-accent transition-colors duration-300"></i>
-                <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-darker animate-pulse"></span>
+                <i
+                    class="fa-regular fa-bell text-xl text-muted group-hover:text-accent transition-colors duration-300"></i>
+                <span
+                    class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-darker animate-pulse"></span>
             </div>
 
             <!-- Hamburger -->
-            <button id="btn-hamburger" class="text-xl text-muted hover:text-accent cursor-pointer transition-colors duration-300 ml-1" aria-label="Open menu">
+            <button id="btn-hamburger"
+                class="text-xl text-muted hover:text-accent cursor-pointer transition-colors duration-300 ml-1"
+                aria-label="Open menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
     </header>
 
     <!-- SIDEBAR DRAWER -->
-    <div id="sidebar-overlay" class="fixed inset-0 bg-black/60 z-50 opacity-0 invisible transition-all duration-300 backdrop-blur-sm"></div>
-    <aside id="sidebar-drawer" class="fixed top-0 right-[-350px] w-[300px] h-full bg-card shadow-[-10px_0_40px_rgba(0,0,0,0.6)] z-[60] flex flex-col transition-all duration-500 ease-out">
+    <div id="sidebar-overlay"
+        class="fixed inset-0 bg-black/60 z-50 opacity-0 invisible transition-all duration-300 backdrop-blur-sm"></div>
+    <aside id="sidebar-drawer"
+        class="fixed top-0 right-[-350px] w-[300px] h-full bg-card shadow-[-10px_0_40px_rgba(0,0,0,0.6)] z-[60] flex flex-col transition-all duration-500 ease-out">
         <div class="flex justify-between items-center p-6 border-b border-gray-800/50">
             <div class="flex items-center gap-3">
                 <span class="font-bold text-xl tracking-wide">Reader's Haven</span>
             </div>
-            <button id="btn-close-sidebar" class="text-2xl text-muted hover:text-accent transition-colors duration-300" aria-label="Close menu">
+            <button id="btn-close-sidebar" class="text-2xl text-muted hover:text-accent transition-colors duration-300"
+                aria-label="Close menu">
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
         <div class="p-5 flex flex-col gap-1 flex-grow no-scrollbar overflow-y-auto">
-            <a href="index.html" class="sidebar-link flex items-center gap-4 text-white font-semibold p-3.5 rounded-xl hover:bg-accent/10 hover:text-accent transition-all duration-300 transform hover:translate-x-2">
+            <a href="index.html"
+                class="sidebar-link flex items-center gap-4 text-white font-semibold p-3.5 rounded-xl hover:bg-accent/10 hover:text-accent transition-all duration-300 transform hover:translate-x-2">
                 <i class="fa-solid fa-house w-5 text-center text-muted"></i> Home
             </a>
-            <a href="#" class="sidebar-link flex items-center gap-4 text-white font-semibold p-3.5 rounded-xl hover:bg-accent/10 hover:text-accent transition-all duration-300 transform hover:translate-x-2">
+            <a href="#"
+                class="sidebar-link flex items-center gap-4 text-white font-semibold p-3.5 rounded-xl hover:bg-accent/10 hover:text-accent transition-all duration-300 transform hover:translate-x-2">
                 <i class="fa-solid fa-compass w-5 text-center text-muted"></i> Explore
             </a>
-            <a href="#" class="sidebar-link flex items-center gap-4 text-white font-semibold p-3.5 rounded-xl hover:bg-accent/10 hover:text-accent transition-all duration-300 transform hover:translate-x-2">
+            <a href="#"
+                class="sidebar-link flex items-center gap-4 text-white font-semibold p-3.5 rounded-xl hover:bg-accent/10 hover:text-accent transition-all duration-300 transform hover:translate-x-2">
                 <i class="fa-solid fa-bookmark w-5 text-center text-muted"></i> My Library
             </a>
-            <a href="#" class="sidebar-link flex items-center gap-4 text-white font-semibold p-3.5 rounded-xl hover:bg-accent/10 hover:text-accent transition-all duration-300 transform hover:translate-x-2">
+            <a href="#"
+                class="sidebar-link flex items-center gap-4 text-white font-semibold p-3.5 rounded-xl hover:bg-accent/10 hover:text-accent transition-all duration-300 transform hover:translate-x-2">
                 <i class="fa-solid fa-user-gear w-5 text-center text-muted"></i> Profile Settings
             </a>
-            <a href="#" id="btn-theme-toggle" class="sidebar-link flex items-center gap-4 text-white font-semibold p-3.5 rounded-xl hover:bg-accent/10 hover:text-accent transition-all duration-300 transform hover:translate-x-2">
-                <i class="fa-solid fa-moon w-5 text-center text-muted" id="theme-icon"></i> <span id="theme-text">Dark / Light Theme</span>
+            <a href="#" id="btn-theme-toggle"
+                class="sidebar-link flex items-center gap-4 text-white font-semibold p-3.5 rounded-xl hover:bg-accent/10 hover:text-accent transition-all duration-300 transform hover:translate-x-2">
+                <i class="fa-solid fa-moon w-5 text-center text-muted" id="theme-icon"></i> <span id="theme-text">Dark /
+                    Light Theme</span>
             </a>
-            <a href="#" class="sidebar-link flex items-center gap-4 text-white font-semibold p-3.5 rounded-xl hover:bg-accent/10 hover:text-accent transition-all duration-300 transform hover:translate-x-2">
+            <a href="#"
+                class="sidebar-link flex items-center gap-4 text-white font-semibold p-3.5 rounded-xl hover:bg-accent/10 hover:text-accent transition-all duration-300 transform hover:translate-x-2">
                 <i class="fa-solid fa-headset w-5 text-center text-muted"></i> Support
             </a>
             <div class="h-px bg-gray-800/50 my-3"></div>
-            <a href="login.html" class="sidebar-link flex items-center gap-4 text-accent font-semibold p-3.5 rounded-xl hover:bg-accent/10 hover:text-accent transition-all duration-300 transform hover:translate-x-2" id="sidebar-auth-btn">
-                <i class="fa-solid fa-right-from-bracket w-5 text-center" id="auth-icon"></i> <span id="auth-text">Login / Sign Up</span>
+            <a href="login.html"
+                class="sidebar-link flex items-center gap-4 text-accent font-semibold p-3.5 rounded-xl hover:bg-accent/10 hover:text-accent transition-all duration-300 transform hover:translate-x-2"
+                id="sidebar-auth-btn">
+                <i class="fa-solid fa-right-from-bracket w-5 text-center" id="auth-icon"></i> <span id="auth-text">Login
+                    / Sign Up</span>
             </a>
         </div>
     </aside>
@@ -205,51 +256,70 @@
 
         <!-- 1. FULL-WIDTH HERO SECTION -->
         <div class="mb-10">
-            <section id="hero-carousel" class="hero-card relative backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden border border-gray-800/40 group">
+            <section id="hero-carousel"
+                class="hero-card relative backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden border border-gray-800/40 group">
                 <!-- Blurred background artwork -->
-                <div id="hero-bg-blur" class="absolute inset-0 bg-cover bg-center filter blur-3xl opacity-20 transition-all duration-700 scale-105 pointer-events-none"></div>
-                <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent pointer-events-none"></div>
-                
-                <!-- Main Navigation Arrows (Edge Positioned) -->
-                <button id="carousel-prev" class="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-black/60 hover:bg-accent text-white flex items-center justify-center backdrop-blur-md transition-all duration-300 opacity-0 group-hover:opacity-100 focus:opacity-100 shadow-lg" aria-label="Previous slide">
+                <div id="hero-bg-blur"
+                    class="absolute inset-0 bg-cover bg-center filter blur-3xl opacity-20 transition-all duration-700 scale-105 pointer-events-none">
+                </div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent pointer-events-none">
+                </div>
+
+                <!-- Main Navigation Arrows -->
+                <button id="carousel-prev"
+                    class="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-black/60 hover:bg-accent text-white flex items-center justify-center backdrop-blur-md transition-all duration-300 opacity-0 group-hover:opacity-100 focus:opacity-100 shadow-lg"
+                    aria-label="Previous slide">
                     <i class="fa-solid fa-chevron-left text-base"></i>
                 </button>
-                <button id="carousel-next" class="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-black/60 hover:bg-accent text-white flex items-center justify-center backdrop-blur-md transition-all duration-300 opacity-0 group-hover:opacity-100 focus:opacity-100 shadow-lg" aria-label="Next slide">
+                <button id="carousel-next"
+                    class="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-black/60 hover:bg-accent text-white flex items-center justify-center backdrop-blur-md transition-all duration-300 opacity-0 group-hover:opacity-100 focus:opacity-100 shadow-lg"
+                    aria-label="Next slide">
                     <i class="fa-solid fa-chevron-right text-base"></i>
                 </button>
 
-                <div class="carousel-inner grid grid-cols-1 md:grid-cols-[400px_1fr] gap-6 md:gap-16 p-6 md:p-12 items-center min-h-[500px]">
+                <div
+                    class="carousel-inner grid grid-cols-1 md:grid-cols-[400px_1fr] gap-6 md:gap-16 p-6 md:p-12 items-center min-h-[500px]">
 
                     <!-- Carousel Image Container -->
                     <div class="relative group/image-wrap">
-                        <img id="hero-image"
-                             src=""
-                             alt="Featured Manga Cover"
-                             class="w-full aspect-portrait object-cover rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.6)] transition-all duration-500 group-hover:scale-[1.03] group-hover:shadow-accent/30 opacity-0">
-                        <div class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
+                        <img id="hero-image" src="" alt="Featured Manga Cover"
+                            class="w-full aspect-portrait object-cover rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.6)] transition-all duration-500 group-hover:scale-[1.03] group-hover:shadow-accent/30 opacity-0">
+                        <div
+                            class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/60 to-transparent opacity-60">
+                        </div>
                     </div>
 
                     <!-- Carousel Details -->
-                    <div class="flex flex-col justify-center pr-10 transition-opacity duration-300 opacity-0" id="hero-content">
+                    <div class="flex flex-col justify-center pr-10 transition-opacity duration-300 opacity-0"
+                        id="hero-content">
                         <div class="space-y-6">
                             <div class="flex items-center gap-3">
-                                <span id="hero-status" class="bg-accent text-dark px-3 py-1 rounded-md text-[11px] font-black uppercase tracking-widest shadow-lg shadow-accent/20"></span>
+                                <span id="hero-status"
+                                    class="bg-accent text-dark px-3 py-1 rounded-md text-[11px] font-black uppercase tracking-widest shadow-lg shadow-accent/20"></span>
                                 <div class="flex items-center gap-1.5 text-accent/60 font-bold text-xs">
                                     <i class="fa-solid fa-fire-flame-curved text-[10px]"></i>
                                     <span>Weekly Featured Selection</span>
                                 </div>
                             </div>
-                            
+
                             <div>
-                                <h1 id="hero-title" class="text-4xl sm:text-6xl xl:text-7xl font-black uppercase tracking-tight mb-4 leading-[0.95] text-white drop-shadow-2xl"></h1>
-                                <h3 id="hero-chapter" class="text-xl md:text-2xl font-bold text-accent mb-6 tracking-wide flex items-center gap-3"></h3>
+                                <h1 id="hero-title"
+                                    class="text-4xl sm:text-6xl xl:text-7xl font-black uppercase tracking-tight mb-4 leading-[0.95] text-white drop-shadow-2xl">
+                                </h1>
+                                <h3 id="hero-chapter"
+                                    class="text-xl md:text-2xl font-bold text-accent mb-6 tracking-wide flex items-center gap-3">
+                                </h3>
                             </div>
 
-                            <p id="hero-desc" class="text-muted text-lg md:text-xl leading-relaxed mb-8 w-full max-w-3xl font-medium opacity-90"></p>
+                            <p id="hero-desc"
+                                class="text-muted text-lg md:text-xl leading-relaxed mb-8 w-full max-w-3xl font-medium opacity-90">
+                            </p>
                         </div>
 
                         <div id="hero-genres" class="flex gap-3 flex-wrap mt-2 mb-6"></div>
-                        <button id="hero-read-btn" class="w-fit bg-accent hover:bg-accent/85 text-white font-black px-8 py-3.5 rounded-full text-xs tracking-wider shadow-lg shadow-accent/25 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2 mb-4">
+                        <button id="hero-read-btn"
+                            class="w-fit bg-accent hover:bg-accent/85 text-white font-black px-8 py-3.5 rounded-full text-xs tracking-wider shadow-lg shadow-accent/25 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2 mb-4">
                             <i class="fa-solid fa-book-open"></i> READ NOW
                         </button>
                     </div>
@@ -257,9 +327,13 @@
 
                 <!-- Mobile Indicators -->
                 <div class="sm:hidden flex items-center justify-center gap-4 p-4 pt-0">
-                    <button id="carousel-prev-mobile" class="w-8 h-8 rounded-lg bg-gray-800 flex items-center justify-center"><i class="fa-solid fa-chevron-left text-xs"></i></button>
+                    <button id="carousel-prev-mobile"
+                        class="w-8 h-8 rounded-lg bg-gray-800 flex items-center justify-center"><i
+                            class="fa-solid fa-chevron-left text-xs"></i></button>
                     <div id="hero-dots-mobile" class="flex gap-1"></div>
-                    <button id="carousel-next-mobile" class="w-8 h-8 rounded-lg bg-gray-800 flex items-center justify-center"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+                    <button id="carousel-next-mobile"
+                        class="w-8 h-8 rounded-lg bg-gray-800 flex items-center justify-center"><i
+                            class="fa-solid fa-chevron-right text-xs"></i></button>
                 </div>
 
                 <!-- Desktop Pagination Dots -->
@@ -271,17 +345,24 @@
 
         <!-- Filter Tabs & Trending Grid -->
         <div class="flex flex-col gap-8">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-gray-800/40 pb-6">
+            <div
+                class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-gray-800/40 pb-6">
                 <div class="flex items-center gap-3">
                     <div class="w-2 h-8 bg-accent rounded-full"></div>
                     <h2 class="text-2xl font-black text-white uppercase tracking-tight">Trending Updates</h2>
                 </div>
-                
+
                 <div class="flex flex-wrap gap-2.5">
-                    <button class="filter-tab active px-6 py-2.5 rounded-full text-[12px] font-black tracking-wider transition-all duration-300">LATEST RELEASES</button>
-                    <button class="filter-tab px-6 py-2.5 rounded-full text-[12px] font-black tracking-wider transition-all duration-300">TOP POPULAR</button>
-                    <button class="filter-tab px-6 py-2.5 rounded-full text-[12px] font-black tracking-wider transition-all duration-300">COMPLETED</button>
-                    <button class="filter-tab px-6 py-2.5 rounded-full text-[12px] font-black tracking-wider transition-all duration-300">UPCOMING</button>
+                    <button
+                        class="filter-tab active px-6 py-2.5 rounded-full text-[12px] font-black tracking-wider transition-all duration-300">LATEST
+                        RELEASES</button>
+                    <button
+                        class="filter-tab px-6 py-2.5 rounded-full text-[12px] font-black tracking-wider transition-all duration-300">TOP
+                        POPULAR</button>
+                    <button
+                        class="filter-tab px-6 py-2.5 rounded-full text-[12px] font-black tracking-wider transition-all duration-300">COMPLETED</button>
+                    <button
+                        class="filter-tab px-6 py-2.5 rounded-full text-[12px] font-black tracking-wider transition-all duration-300">UPCOMING</button>
                 </div>
             </div>
 
@@ -290,23 +371,27 @@
                 <!-- 25 Cards injected by JS -->
             </div>
 
-            <!-- GRID PAGINATION (DYNAMIC) -->
+            <!-- GRID PAGINATION -->
             <div id="pagination-container" class="flex justify-end items-center mt-12 mb-8 gap-4">
                 <div class="page-info flex items-center gap-2 pr-4 border-r border-gray-800/60 mr-2">
                     <span class="text-muted text-xs font-bold uppercase tracking-widest">Page</span>
                     <span class="text-white font-black text-sm">01 <span class="text-muted/40 mx-1">/</span> 05</span>
                 </div>
-                
+
                 <div class="flex gap-3">
-                    <button class="page-prev group w-12 h-12 rounded-2xl bg-surface border border-gray-800/60 text-muted hover:text-accent hover:border-accent/50 transition-all duration-300 flex items-center justify-center shadow-xl hover:shadow-accent/5 disabled:opacity-30 disabled:cursor-not-allowed" aria-label="Previous page">
+                    <button
+                        class="page-prev group w-12 h-12 rounded-2xl bg-surface border border-gray-800/60 text-muted hover:text-accent hover:border-accent/50 transition-all duration-300 flex items-center justify-center shadow-xl hover:shadow-accent/5 disabled:opacity-30 disabled:cursor-not-allowed"
+                        aria-label="Previous page">
                         <i class="fa-solid fa-arrow-left text-sm transition-transform group-hover:-translate-x-1"></i>
                     </button>
-                    
+
                     <div class="page-numbers hidden sm:flex gap-2">
                         <!-- Injected by JS -->
                     </div>
 
-                    <button class="page-next group w-12 h-12 rounded-2xl bg-surface border border-gray-800/60 text-muted hover:text-accent hover:border-accent/50 transition-all duration-300 flex items-center justify-center shadow-xl hover:shadow-accent/5 disabled:opacity-30 disabled:cursor-not-allowed" aria-label="Next page">
+                    <button
+                        class="page-next group w-12 h-12 rounded-2xl bg-surface border border-gray-800/60 text-muted hover:text-accent hover:border-accent/50 transition-all duration-300 flex items-center justify-center shadow-xl hover:shadow-accent/5 disabled:opacity-30 disabled:cursor-not-allowed"
+                        aria-label="Next page">
                         <i class="fa-solid fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
                     </button>
                 </div>
@@ -322,12 +407,21 @@
                 <!-- Brand Column -->
                 <div class="flex flex-col gap-3">
                     <span class="font-black text-xl tracking-wider text-accent">Reader's Haven</span>
-                    <p class="text-muted text-sm leading-relaxed max-w-xs">Your ultimate destination for manga, manhwa, and light novels. Read, discover, and track your favorite series.</p>
+                    <p class="text-muted text-sm leading-relaxed max-w-xs">Your ultimate destination for manga, manhwa,
+                        and light novels. Read, discover, and track your favorite series.</p>
                     <div class="flex gap-3 mt-2">
-                        <a href="#" class="w-9 h-9 rounded-full bg-surface flex items-center justify-center text-muted hover:text-accent hover:bg-accent/10 transition-all duration-300"><i class="fa-brands fa-twitter text-sm"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-full bg-surface flex items-center justify-center text-muted hover:text-accent hover:bg-accent/10 transition-all duration-300"><i class="fa-brands fa-discord text-sm"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-full bg-surface flex items-center justify-center text-muted hover:text-accent hover:bg-accent/10 transition-all duration-300"><i class="fa-brands fa-reddit text-sm"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-full bg-surface flex items-center justify-center text-muted hover:text-accent hover:bg-accent/10 transition-all duration-300"><i class="fa-brands fa-github text-sm"></i></a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-surface flex items-center justify-center text-muted hover:text-accent hover:bg-accent/10 transition-all duration-300"><i
+                                class="fa-brands fa-twitter text-sm"></i></a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-surface flex items-center justify-center text-muted hover:text-accent hover:bg-accent/10 transition-all duration-300"><i
+                                class="fa-brands fa-discord text-sm"></i></a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-surface flex items-center justify-center text-muted hover:text-accent hover:bg-accent/10 transition-all duration-300"><i
+                                class="fa-brands fa-reddit text-sm"></i></a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-surface flex items-center justify-center text-muted hover:text-accent hover:bg-accent/10 transition-all duration-300"><i
+                                class="fa-brands fa-github text-sm"></i></a>
                     </div>
                 </div>
                 <!-- Quick Links -->
@@ -343,8 +437,10 @@
                     <h4 class="font-black text-xs text-white uppercase tracking-widest mb-1">Stay Updated</h4>
                     <p class="text-muted text-sm">Get notified about new releases and updates.</p>
                     <div class="flex gap-2">
-                        <input type="email" placeholder="Your email" class="flex-1 bg-surface border border-gray-800/60 rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-500 outline-none focus:border-accent transition-all">
-                        <button class="px-5 py-2.5 bg-accent hover:bg-accent/85 text-white font-bold text-xs rounded-xl transition-all duration-300 tracking-wider">JOIN</button>
+                        <input type="email" placeholder="Your email"
+                            class="flex-1 bg-surface border border-gray-800/60 rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-500 outline-none focus:border-accent transition-all">
+                        <button
+                            class="px-5 py-2.5 bg-accent hover:bg-accent/85 text-white font-bold text-xs rounded-xl transition-all duration-300 tracking-wider">JOIN</button>
                     </div>
                 </div>
             </div>
@@ -361,29 +457,35 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-accent text-white rounded-full shadow-2xl opacity-0 translate-y-10 transition-all duration-500 z-50 flex items-center justify-center hover:scale-110 active:scale-95 cursor-pointer pointer-events-none">
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 w-12 h-12 bg-accent text-white rounded-full shadow-2xl opacity-0 translate-y-10 transition-all duration-500 z-50 flex items-center justify-center hover:scale-110 active:scale-95 cursor-pointer pointer-events-none">
         <i class="fa-solid fa-arrow-up text-lg"></i>
     </button>
 
     <!-- Manga Detail Modal -->
-    <div id="manga-detail-modal" class="fixed inset-0 z-50 opacity-0 invisible transition-all duration-300 flex items-center justify-center p-4 backdrop-blur-md bg-black/70">
-        <div class="relative w-full max-w-3xl bg-card border border-gray-800 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh] scale-95 transition-all duration-300">
+    <div id="manga-detail-modal"
+        class="fixed inset-0 z-50 opacity-0 invisible transition-all duration-300 flex items-center justify-center p-4 backdrop-blur-md bg-black/70">
+        <div
+            class="relative w-full max-w-3xl bg-card border border-gray-800 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh] scale-95 transition-all duration-300">
             <!-- Header (Close Button) -->
-            <button id="btn-close-detail" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/60 hover:bg-accent text-white flex items-center justify-center backdrop-blur-md transition-all duration-300 shadow-md">
+            <button id="btn-close-detail"
+                class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/60 hover:bg-accent text-white flex items-center justify-center backdrop-blur-md transition-all duration-300 shadow-md">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            
+
             <!-- Detail Body (Scrollable) -->
             <div class="overflow-y-auto p-6 md:p-8 space-y-6 no-scrollbar">
                 <div class="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-6 md:gap-8">
                     <!-- Left: Cover -->
-                    <div class="relative aspect-[2/3] w-full max-w-[200px] mx-auto rounded-2xl overflow-hidden shadow-2xl border border-gray-800">
+                    <div
+                        class="relative aspect-[2/3] w-full max-w-[200px] mx-auto rounded-2xl overflow-hidden shadow-2xl border border-gray-800">
                         <img id="detail-cover" src="" alt="" class="w-full h-full object-cover">
                     </div>
                     <!-- Right: Info -->
                     <div class="flex flex-col justify-center space-y-4">
                         <div class="flex items-center gap-3">
-                            <span id="detail-status" class="bg-accent text-dark px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider shadow"></span>
+                            <span id="detail-status"
+                                class="bg-accent text-dark px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider shadow"></span>
                             <div class="flex items-center gap-1 text-yellow-400 font-bold text-xs">
                                 <i class="fa-solid fa-star"></i>
                                 <span id="detail-rating"></span>
@@ -406,7 +508,8 @@
                     <h3 class="text-lg font-black text-white uppercase tracking-tight flex items-center gap-2">
                         <i class="fa-solid fa-list-ul text-accent"></i> Available Chapters
                     </h3>
-                    <div id="chapters-list-container" class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[250px] overflow-y-auto pr-1 no-scrollbar">
+                    <div id="chapters-list-container"
+                        class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[250px] overflow-y-auto pr-1 no-scrollbar">
                         <!-- Chapters injected by JS -->
                     </div>
                 </div>
@@ -415,69 +518,97 @@
     </div>
 
     <!-- Manga Reader Modal -->
-    <div id="manga-reader-modal" class="fixed inset-0 z-50 bg-darker opacity-0 invisible transition-all duration-300 flex flex-col">
+    <div id="manga-reader-modal"
+        class="fixed inset-0 z-50 bg-darker opacity-0 invisible transition-all duration-300 flex flex-col">
         <!-- Top Toolbar -->
         <header class="bg-card border-b border-gray-800 px-4 py-3 flex items-center justify-between shadow-lg">
             <div class="flex items-center gap-3">
-                <button id="btn-reader-back" class="w-10 h-10 rounded-full bg-surface hover:bg-accent hover:text-white flex items-center justify-center text-muted transition-all duration-300">
+                <button id="btn-reader-back"
+                    class="w-10 h-10 rounded-full bg-surface hover:bg-accent hover:text-white flex items-center justify-center text-muted transition-all duration-300">
                     <i class="fa-solid fa-arrow-left"></i>
                 </button>
                 <div>
-                    <h4 id="reader-manga-title" class="font-black text-sm text-white uppercase tracking-wider truncate max-w-[150px] sm:max-w-[300px]"></h4>
+                    <h4 id="reader-manga-title"
+                        class="font-black text-sm text-white uppercase tracking-wider truncate max-w-[150px] sm:max-w-[300px]">
+                    </h4>
                     <span id="reader-chapter-title" class="text-xs text-muted font-bold"></span>
                 </div>
             </div>
-            
+
             <!-- Controls -->
             <div class="flex items-center gap-2">
                 <!-- Mode Toggle (Scroll vs Page) -->
-                <button id="btn-reader-mode" class="w-10 h-10 rounded-full bg-surface hover:bg-accent hover:text-white flex items-center justify-center text-muted transition-all duration-300" title="Switch Reading Mode">
+                <button id="btn-reader-mode"
+                    class="w-10 h-10 rounded-full bg-surface hover:bg-accent hover:text-white flex items-center justify-center text-muted transition-all duration-300"
+                    title="Switch Reading Mode">
                     <i class="fa-solid fa-scroll"></i>
                 </button>
                 <!-- Settings Button -->
-                <button id="btn-reader-settings" class="w-10 h-10 rounded-full bg-surface hover:bg-accent hover:text-white flex items-center justify-center text-muted transition-all duration-300" title="Reader Settings">
+                <button id="btn-reader-settings"
+                    class="w-10 h-10 rounded-full bg-surface hover:bg-accent hover:text-white flex items-center justify-center text-muted transition-all duration-300"
+                    title="Reader Settings">
                     <i class="fa-solid fa-sliders"></i>
                 </button>
                 <div class="h-6 w-px bg-gray-800 mx-1"></div>
                 <!-- Prev / Next Chapter Buttons -->
-                <button id="btn-reader-prev-ch" class="w-10 h-10 rounded-full bg-surface hover:bg-accent hover:text-white flex items-center justify-center text-muted transition-all duration-300 disabled:opacity-30 disabled:pointer-events-none" title="Previous Chapter">
+                <button id="btn-reader-prev-ch"
+                    class="w-10 h-10 rounded-full bg-surface hover:bg-accent hover:text-white flex items-center justify-center text-muted transition-all duration-300 disabled:opacity-30 disabled:pointer-events-none"
+                    title="Previous Chapter">
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
-                <button id="btn-reader-next-ch" class="w-10 h-10 rounded-full bg-surface hover:bg-accent hover:text-white flex items-center justify-center text-muted transition-all duration-300 disabled:opacity-30 disabled:pointer-events-none" title="Next Chapter">
+                <button id="btn-reader-next-ch"
+                    class="w-10 h-10 rounded-full bg-surface hover:bg-accent hover:text-white flex items-center justify-center text-muted transition-all duration-300 disabled:opacity-30 disabled:pointer-events-none"
+                    title="Next Chapter">
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
                 <div class="h-6 w-px bg-gray-800 mx-1"></div>
                 <!-- Close Reader (Go directly back to homepage) -->
-                <button id="btn-reader-close" class="w-10 h-10 rounded-full bg-surface hover:bg-accent hover:text-white flex items-center justify-center text-muted transition-all duration-300" title="Close Reader">
+                <button id="btn-reader-close"
+                    class="w-10 h-10 rounded-full bg-surface hover:bg-accent hover:text-white flex items-center justify-center text-muted transition-all duration-300"
+                    title="Close Reader">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
         </header>
 
         <!-- Settings Panel -->
-        <div id="reader-settings-panel" class="absolute top-16 right-4 z-50 bg-card/95 backdrop-blur-xl border border-gray-800 rounded-3xl p-5 w-72 shadow-2xl transition-all duration-300 transform scale-95 opacity-0 invisible flex flex-col gap-4">
+        <div id="reader-settings-panel"
+            class="absolute top-16 right-4 z-50 bg-card/95 backdrop-blur-xl border border-gray-800 rounded-3xl p-5 w-72 shadow-2xl transition-all duration-300 transform scale-95 opacity-0 invisible flex flex-col gap-4">
             <h5 class="text-xs font-black text-white uppercase tracking-wider flex items-center gap-2">
                 <i class="fa-solid fa-sliders text-accent"></i> Reader Settings
             </h5>
-            
+
             <!-- Theme Selection -->
             <div>
-                <label class="text-[10px] text-muted font-black tracking-wider uppercase block mb-2">Background Color</label>
+                <label class="text-[10px] text-muted font-black tracking-wider uppercase block mb-2">Background
+                    Color</label>
                 <div class="grid grid-cols-4 gap-2">
-                    <button data-theme="dark" class="h-8 rounded-lg bg-black border border-gray-800 hover:scale-105 active:scale-95 transition-all text-[10px] font-black text-white" title="Pitch Dark">Dark</button>
-                    <button data-theme="charcoal" class="h-8 rounded-lg bg-[#1a1a1a] border border-gray-800 hover:scale-105 active:scale-95 transition-all text-[10px] font-black text-white" title="Charcoal">Gray</button>
-                    <button data-theme="sepia" class="h-8 rounded-lg bg-[#f4ecd8] border border-amber-900/20 hover:scale-105 active:scale-95 transition-all text-[10px] font-black text-amber-950" title="Sepia">Sepia</button>
-                    <button data-theme="light" class="h-8 rounded-lg bg-white border border-gray-300 hover:scale-105 active:scale-95 transition-all text-[10px] font-black text-black" title="Light">Light</button>
+                    <button data-theme="dark"
+                        class="h-8 rounded-lg bg-black border border-gray-800 hover:scale-105 active:scale-95 transition-all text-[10px] font-black text-white"
+                        title="Pitch Dark">Dark</button>
+                    <button data-theme="charcoal"
+                        class="h-8 rounded-lg bg-[#1a1a1a] border border-gray-800 hover:scale-105 active:scale-95 transition-all text-[10px] font-black text-white"
+                        title="Charcoal">Gray</button>
+                    <button data-theme="sepia"
+                        class="h-8 rounded-lg bg-[#f4ecd8] border border-amber-900/20 hover:scale-105 active:scale-95 transition-all text-[10px] font-black text-amber-950"
+                        title="Sepia">Sepia</button>
+                    <button data-theme="light"
+                        class="h-8 rounded-lg bg-white border border-gray-300 hover:scale-105 active:scale-95 transition-all text-[10px] font-black text-black"
+                        title="Light">Light</button>
                 </div>
             </div>
-            
+
             <!-- Page Width Selection -->
             <div>
-                <label class="text-[10px] text-muted font-black tracking-wider uppercase block mb-2">Max Page Width</label>
+                <label class="text-[10px] text-muted font-black tracking-wider uppercase block mb-2">Max Page
+                    Width</label>
                 <div class="grid grid-cols-3 gap-2">
-                    <button data-width="600" class="py-1.5 rounded-lg bg-surface hover:bg-accent hover:text-white border border-gray-800 text-[10px] font-bold text-white transition-all duration-300">Narrow</button>
-                    <button data-width="750" class="py-1.5 rounded-lg bg-accent text-white border border-transparent text-[10px] font-bold transition-all duration-300">Default</button>
-                    <button data-width="950" class="py-1.5 rounded-lg bg-surface hover:bg-accent hover:text-white border border-gray-800 text-[10px] font-bold text-white transition-all duration-300">Wide</button>
+                    <button data-width="600"
+                        class="py-1.5 rounded-lg bg-surface hover:bg-accent hover:text-white border border-gray-800 text-[10px] font-bold text-white transition-all duration-300">Narrow</button>
+                    <button data-width="750"
+                        class="py-1.5 rounded-lg bg-accent text-white border border-transparent text-[10px] font-bold transition-all duration-300">Default</button>
+                    <button data-width="950"
+                        class="py-1.5 rounded-lg bg-surface hover:bg-accent hover:text-white border border-gray-800 text-[10px] font-bold text-white transition-all duration-300">Wide</button>
                 </div>
             </div>
 
@@ -485,23 +616,31 @@
             <div>
                 <label class="text-[10px] text-muted font-black tracking-wider uppercase block mb-2">Page Zoom</label>
                 <div class="flex items-center gap-3">
-                    <button id="btn-zoom-out" class="w-8 h-8 rounded-lg bg-surface hover:bg-accent hover:text-white flex items-center justify-center text-xs font-bold text-white border border-gray-800 transition-all duration-300">-</button>
+                    <button id="btn-zoom-out"
+                        class="w-8 h-8 rounded-lg bg-surface hover:bg-accent hover:text-white flex items-center justify-center text-xs font-bold text-white border border-gray-800 transition-all duration-300">-</button>
                     <span id="zoom-indicator" class="flex-grow text-center text-xs font-bold text-white">100%</span>
-                    <button id="btn-zoom-in" class="w-8 h-8 rounded-lg bg-surface hover:bg-accent hover:text-white flex items-center justify-center text-xs font-bold text-white border border-gray-800 transition-all duration-300">+</button>
+                    <button id="btn-zoom-in"
+                        class="w-8 h-8 rounded-lg bg-surface hover:bg-accent hover:text-white flex items-center justify-center text-xs font-bold text-white border border-gray-800 transition-all duration-300">+</button>
                 </div>
             </div>
         </div>
 
         <!-- Reader Canvas (Scrollable Pages) -->
-        <div id="reader-canvas" class="flex-grow overflow-y-auto p-4 md:p-8 flex flex-col items-center gap-6 no-scrollbar bg-dark select-none">
+        <div id="reader-canvas"
+            class="flex-grow overflow-y-auto p-4 md:p-8 flex flex-col items-center gap-6 no-scrollbar bg-dark select-none">
             <!-- Reader content injected by JS -->
         </div>
 
         <!-- Bottom Toolbar (For Page Navigation in Slide Mode) -->
-        <footer id="reader-footer" class="bg-card border-t border-gray-800 px-4 py-3 flex items-center justify-between shadow-lg">
-            <button id="btn-reader-prev-page" class="px-4 py-2 rounded-full bg-surface hover:bg-accent hover:text-white text-xs font-black tracking-wider text-muted transition-all duration-300 disabled:opacity-30 disabled:pointer-events-none">PREV PAGE</button>
+        <footer id="reader-footer"
+            class="bg-card border-t border-gray-800 px-4 py-3 flex items-center justify-between shadow-lg">
+            <button id="btn-reader-prev-page"
+                class="px-4 py-2 rounded-full bg-surface hover:bg-accent hover:text-white text-xs font-black tracking-wider text-muted transition-all duration-300 disabled:opacity-30 disabled:pointer-events-none">PREV
+                PAGE</button>
             <span id="reader-page-indicator" class="text-xs text-muted font-black tracking-wider">PAGE 1 / 10</span>
-            <button id="btn-reader-next-page" class="px-4 py-2 rounded-full bg-surface hover:bg-accent hover:text-white text-xs font-black tracking-wider text-muted transition-all duration-300 disabled:opacity-30 disabled:pointer-events-none">NEXT PAGE</button>
+            <button id="btn-reader-next-page"
+                class="px-4 py-2 rounded-full bg-surface hover:bg-accent hover:text-white text-xs font-black tracking-wider text-muted transition-all duration-300 disabled:opacity-30 disabled:pointer-events-none">NEXT
+                PAGE</button>
         </footer>
     </div>
 
@@ -516,8 +655,5 @@
     <script src="./manga-data/manga-data.js"></script>
     <script src="./assets/js/home-page.js"></script>
 </body>
+
 </html>
-
-
-
-

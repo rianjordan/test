@@ -1,8 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   Reader's Haven — Authentication Logic
-   auth.js
-   Authentication logic for login and signup
-   ═══════════════════════════════════════════════════════════ */
+/* Reader's Haven - Authentication Logic */
 
 document.addEventListener('DOMContentLoaded', () => {
 
