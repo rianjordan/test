@@ -549,18 +549,23 @@
                     title="Reader Settings">
                     <i class="fa-solid fa-sliders"></i>
                 </button>
-                <div class="h-6 w-px bg-gray-800 mx-1"></div>
-                <!-- Prev / Next Chapter Buttons -->
-                <button id="btn-reader-prev-ch"
-                    class="w-10 h-10 rounded-full bg-surface hover:bg-accent hover:text-white flex items-center justify-center text-muted transition-all duration-300 disabled:opacity-30 disabled:pointer-events-none"
-                    title="Previous Chapter">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                <button id="btn-reader-next-ch"
-                    class="w-10 h-10 rounded-full bg-surface hover:bg-accent hover:text-white flex items-center justify-center text-muted transition-all duration-300 disabled:opacity-30 disabled:pointer-events-none"
-                    title="Next Chapter">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
+                <div class="h-6 w-px bg-gray-800 mx-1 hidden sm:block"></div>
+                <!-- Prev / Next Chapter Buttons & Chapter List -->
+                <div class="flex items-center gap-1 sm:gap-2 bg-surface/50 p-1 rounded-2xl border border-gray-800/60">
+                    <button id="btn-reader-prev-ch"
+                        class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-surface hover:bg-accent hover:text-white flex items-center justify-center text-muted transition-all duration-300 disabled:opacity-30 disabled:pointer-events-none"
+                        title="Previous Chapter">
+                        <i class="fa-solid fa-chevron-left text-xs"></i>
+                    </button>
+                    <select id="reader-chapter-select"
+                        class="bg-darker text-white text-[10px] sm:text-xs font-bold px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl outline-none border border-gray-700/50 hover:border-accent transition-all cursor-pointer w-[100px] sm:w-[140px] text-center shadow-inner">
+                    </select>
+                    <button id="btn-reader-next-ch"
+                        class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-surface hover:bg-accent hover:text-white flex items-center justify-center text-muted transition-all duration-300 disabled:opacity-30 disabled:pointer-events-none"
+                        title="Next Chapter">
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
                 <div class="h-6 w-px bg-gray-800 mx-1"></div>
                 <!-- Close Reader (Go directly back to homepage) -->
                 <button id="btn-reader-close"

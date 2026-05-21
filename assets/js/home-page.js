@@ -539,6 +539,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnReaderMode = document.getElementById('btn-reader-mode');
     const btnReaderPrevCh = document.getElementById('btn-reader-prev-ch');
     const btnReaderNextCh = document.getElementById('btn-reader-next-ch');
+    const readerChapterSelect = document.getElementById('reader-chapter-select');
     const readerCanvas = document.getElementById('reader-canvas');
     
     // Elements for Reader Footer (Page mode)
@@ -767,6 +768,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (btnReaderPrevCh) btnReaderPrevCh.disabled = (chapterIdx === currentActiveManga.chapters.length - 1);
         if (btnReaderNextCh) btnReaderNextCh.disabled = (chapterIdx === 0);
         
+        // Populate top chapter select
+        if (readerChapterSelect) {
+            readerChapterSelect.innerHTML = currentActiveManga.chapters.map((ch, i) => 
+                `<option value="${i}" ${i === chapterIdx ? 'selected' : ''}>${ch.title}</option>`
+            ).join('');
+        }
+        
         // Show Reader Modal
         if (readerModal) {
             readerModal.classList.remove('invisible', 'opacity-0');
@@ -778,7 +786,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Extracted folder exists. Can load pages natively without CORS!
             renderReaderContent();
         } else if (chapter.source && chapter.source.toLowerCase().endsWith('.pdf')) {
-            // PDF file. Can load natively via iframe without CORS!
+            // PDF file. Can load natively via embed without CORS!
             renderReaderContent();
         } else if (chapter.source) {
             // Free any previous loaded source pages
@@ -987,15 +995,16 @@ document.addEventListener('DOMContentLoaded', () => {
         readerCanvas.innerHTML = '';
         const chapter = currentActiveManga.chapters[currentActiveChapterIdx];
         
-        // Native PDF check - render directly in iframe
+        // Native PDF check - render directly using embed to prevent downloading on local file://
         if (chapter.source && chapter.source.toLowerCase().endsWith('.pdf')) {
             if (readerFooter) readerFooter.classList.add('hidden');
             if (btnReaderMode) btnReaderMode.classList.add('hidden');
             
-            const iframe = document.createElement('iframe');
-            iframe.src = chapter.source;
-            iframe.className = "w-full max-w-[1000px] h-[85vh] bg-[#0c0c0e] border border-gray-800 rounded-3xl shadow-2xl transition-all duration-300";
-            readerCanvas.appendChild(iframe);
+            const embed = document.createElement('embed');
+            embed.src = chapter.source;
+            embed.type = "application/pdf";
+            embed.className = "w-full max-w-[1000px] h-[85vh] bg-[#0c0c0e] border border-gray-800 rounded-3xl shadow-2xl transition-all duration-300";
+            readerCanvas.appendChild(embed);
             return;
         }
         
@@ -1029,6 +1038,47 @@ document.addEventListener('DOMContentLoaded', () => {
                 img.alt = `Page ${p}`;
                 img.loading = "lazy";
                 readerCanvas.appendChild(img);
+            }
+            
+            // Add bottom chapter navigation container
+            const bottomNav = document.createElement('div');
+            bottomNav.className = "w-full max-w-[750px] flex flex-col sm:flex-row justify-between items-center py-8 mt-8 border-t border-gray-800 gap-4 animate-fade-in";
+            
+            const prevDisabled = currentActiveChapterIdx === currentActiveManga.chapters.length - 1 ? 'opacity-30 cursor-not-allowed pointer-events-none' : '';
+            const nextDisabled = currentActiveChapterIdx === 0 ? 'opacity-30 cursor-not-allowed pointer-events-none' : '';
+            
+            let optionsHTML = currentActiveManga.chapters.map((ch, i) => 
+                `<option value="${i}" ${i === currentActiveChapterIdx ? 'selected' : ''}>${ch.title}</option>`
+            ).join('');
+
+            bottomNav.innerHTML = `
+                <button id="btn-bottom-prev-ch" class="px-6 py-3 rounded-full bg-surface hover:bg-accent hover:text-white flex items-center justify-center text-muted font-bold text-xs transition-all duration-300 shadow-lg ${prevDisabled}">
+                    <i class="fa-solid fa-chevron-left mr-2"></i> PREV CHAPTER
+                </button>
+                <select id="bottom-chapter-select" class="bg-darker text-white text-xs font-bold px-4 py-3 rounded-xl outline-none border border-gray-700/50 hover:border-accent transition-all cursor-pointer shadow-inner w-full sm:w-auto min-w-[200px] text-center">
+                    ${optionsHTML}
+                </select>
+                <button id="btn-bottom-next-ch" class="px-6 py-3 rounded-full bg-surface hover:bg-accent hover:text-white flex items-center justify-center text-muted font-bold text-xs transition-all duration-300 shadow-lg ${nextDisabled}">
+                    NEXT CHAPTER <i class="fa-solid fa-chevron-right ml-2"></i>
+                </button>
+            `;
+            readerCanvas.appendChild(bottomNav);
+
+            const btnBottomPrev = bottomNav.querySelector('#btn-bottom-prev-ch');
+            const btnBottomNext = bottomNav.querySelector('#btn-bottom-next-ch');
+            const bottomSelect = bottomNav.querySelector('#bottom-chapter-select');
+
+            if (btnBottomPrev && currentActiveChapterIdx < currentActiveManga.chapters.length - 1) {
+                btnBottomPrev.addEventListener('click', () => openMangaReader(currentActiveChapterIdx + 1));
+            }
+            if (btnBottomNext && currentActiveChapterIdx > 0) {
+                btnBottomNext.addEventListener('click', () => openMangaReader(currentActiveChapterIdx - 1));
+            }
+            if (bottomSelect) {
+                bottomSelect.addEventListener('change', (e) => {
+                    const idx = parseInt(e.target.value, 10);
+                    if (!isNaN(idx)) openMangaReader(idx);
+                });
             }
             
             // Scroll reader back to top
@@ -1214,6 +1264,15 @@ document.addEventListener('DOMContentLoaded', () => {
         btnReaderNextCh.addEventListener('click', () => {
             if (currentActiveChapterIdx > 0) {
                 openMangaReader(currentActiveChapterIdx - 1);
+            }
+        });
+    }
+
+    if (readerChapterSelect) {
+        readerChapterSelect.addEventListener('change', (e) => {
+            const idx = parseInt(e.target.value, 10);
+            if (!isNaN(idx)) {
+                openMangaReader(idx);
             }
         });
     }
